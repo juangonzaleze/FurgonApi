@@ -1,0 +1,46 @@
+<ion-menu type="overlay" [content]="content"  class="menu-o">
+  <ion-header>
+    <ion-toolbar>
+      <button ion-button menuToggle>
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+      <ion-title text-center>Menu de Usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+      <ion-col col-12 text-center>
+        <div class="container">
+          <img class="pantalla-1" src="assets/imgs/userperfil.png">
+        </div>
+        <h4>Usuario Nombre</h4>
+        <h5>Tlf : 0000000</h5>
+      </ion-col>
+      <hr>
+    </ion-grid>
+    <ion-list>
+      <ion-item no-lines>
+        <button ion-button icon-left clear (tap)="openPage(pages[0])">
+          <ion-icon name="create" item-start></ion-icon>
+          <h5>Editar usuario</h5>
+        </button>
+      </ion-item>
+      <ion-item no-lines>
+       <button ion-button icon-left clear>
+        <ion-icon name="key" item-start></ion-icon>
+        <h5>Cambiar contraseña</h5>
+      </button>
+    </ion-item>
+    <ion-item no-lines>
+     <button ion-button icon-left clear>
+      <ion-icon name="log-out" item-start></ion-icon>
+      <h5>Cerrar Sesión</h5>
+    </button>
+  </ion-item>
+</ion-list>
+</ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

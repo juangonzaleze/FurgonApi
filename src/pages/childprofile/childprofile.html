@@ -1,0 +1,137 @@
+<!--
+  Generated template for the PerfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+		<ion-row>
+			<ion-col col-10>
+				<ion-title text-center>Perfil de Juan</ion-title>
+			</ion-col>
+			<ion-col col-2>
+				<button ion-button class="button-edit" *ngIf="!editing" (tap)="startEditing()" icon-only float-right>
+					<ion-icon name="create"></ion-icon>
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: rgba(54,161,213, 0.1);">
+	<div class="contenido-Perfil">
+		<div style="padding-top: 5%;">
+			<ion-row style="border-bottom: 1px solid #dedede;">
+				<ion-col col-5 style="align-self: center">
+					<ion-avatar text-center>
+						<img class="img-profile" src="assets/imgs/kiid.png">
+					</ion-avatar>
+				</ion-col>
+				<ion-col col-7>
+					<ion-row style="height: auto;">
+						<ion-col col-3>
+							<img class="icon-profile" src="assets/imgs/name.png">
+						</ion-col>
+						<ion-col col-9 style="align-self: center" no-padding>
+							<p style="color: #666;">Nombre</p>
+							<ion-label class="Infor-Person" *ngIf="!editing">{{NombreUsuario}}</ion-label>
+							<ion-item *ngIf="editing" style="margin-bottom: 10px" no-lines no-padding>
+								<ion-input text-center [(ngModel)]="newNombreUsuario"></ion-input>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+					<ion-row style="height: auto;">
+						<ion-col col-3>
+							<img class="icon-profile" src="assets/imgs/phone.png">
+						</ion-col>
+						<ion-col col-9 style="align-self: center" no-padding>
+							<p style="color: #666;">Telefono</p>
+							<ion-label class="Infor-Person" *ngIf="!editing">{{TlfUsuario}}</ion-label>
+							<ion-item *ngIf="editing" no-lines no-padding>
+								<ion-input text-center [(ngModel)]="newTlfUsuario"></ion-input>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+				</ion-col>
+			</ion-row>
+		</div>
+	</div>
+	<ion-list>
+		<ion-row style="border-bottom: 1px solid #dedede;height: auto;">
+			<ion-col col-2 style="align-self: center">
+				<ion-avatar item-start>
+					<img class="icon-profile" src="assets/imgs/pins.png">
+				</ion-avatar>
+			</ion-col>
+			<ion-col col-10 no-padding>
+				<p style="color: #666;">Dirección</p>
+				<ion-label class="infor-form__text" *ngIf="!editing">{{Direccion}}</ion-label>
+				<ion-item *ngIf="editing" style="margin-bottom: 10px;width: 250px;">
+					<ion-input text-center [(ngModel)]="newDireccion"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row style="border-bottom: 1px solid #dedede;height: auto;">
+			<ion-col col-2 style="align-self: center">
+				<ion-avatar item-start>
+					<img class="icon-profile" src="assets/imgs/school.png">
+				</ion-avatar>
+			</ion-col>
+			<ion-col col-10 no-padding>
+				<p style="color: #666;">Colegio</p>
+				<ion-label class="infor-form__text" *ngIf="!editing">{{Colegio}}</ion-label>
+				<ion-item *ngIf="editing" style="margin-bottom: 10px;width: 250px;">
+					<ion-input text-center [(ngModel)]="newColegio"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-list>
+	<ion-list class="listwo">
+		<ion-row style="border-bottom: 1px solid #dedede;">
+			<ion-col col-2 style="align-self: center">
+				<ion-avatar item-start>
+					<img class="icon-profile" src="assets/imgs/calendar.png">
+				</ion-avatar>
+			</ion-col>
+			<ion-col col-10 no-padding>
+				<p style="color: #666;">Horario del Furgón</p>
+				<ion-label class="infor-form__text" *ngIf="!editing">{{Horario}}</ion-label>
+				<ion-item *ngIf="editing" style="margin-bottom: 10px;width: 250px;">
+					<ion-input text-center [(ngModel)]="newHorario"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row style="border-bottom: 1px solid #dedede;">
+			<ion-col col-2 style="align-self: center">
+				<ion-avatar item-start>
+					<img class="icon-profile" src="assets/imgs/observacion.png">
+				</ion-avatar>
+			</ion-col>
+			<ion-col col-10 no-padding>
+				<p style="color: #666;">Observaciones</p>
+				<ion-label class="infor-form__text" *ngIf="!editing">{{Observaciones}}</ion-label>
+				<ion-item *ngIf="editing" style="margin-bottom: 10px;width: 250px;">
+					<ion-input text-center [(ngModel)]="newObservaciones"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-list>
+	<ion-row class="row-buttons">
+		<div class="buttons" *ngIf="editing">
+			<ion-col col-6>
+				<button ion-button color="danger" (click)="cancel()" icon-left>
+					<ion-icon name="close"></ion-icon>
+					Cancelar
+				</button>
+			</ion-col>
+			<ion-col col-6>
+				<button ion-button (click)="accept()" icon-left>
+					<ion-icon name="checkmark"></ion-icon>
+					Guardar Cambios
+				</button>
+			</ion-col>
+		</div>
+	</ion-row>
+</ion-content>

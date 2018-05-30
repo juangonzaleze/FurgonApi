@@ -1,0 +1,25 @@
+page-useredit {
+	.contenido-Perfil{
+		margin-top: 7%;
+		ion-avatar img{
+			width:120px !important;
+			height:120px !important;
+		}
+		ion-list{
+			margin-top:5% !important;
+			.infor-form{
+				&__label{
+					font-weight:bold;
+				}
+				&__text{
+					line-height: 1.8;
+				}		
+			}
+		}
+		button{
+			Text-transform: none;
+	
+		}
+	}
+}
+

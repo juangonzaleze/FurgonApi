@@ -1,0 +1,113 @@
+<!--
+  Generated template for the PerfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+		<ion-row>
+			<ion-col col-10>
+				<ion-title text-center>perfil</ion-title>
+			</ion-col>
+			<ion-col col-2>
+				<button ion-button class="button-edit" *ngIf="!editing" (tap)="startEditing()" icon-only float-right>
+					<ion-icon name="create"></ion-icon>
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<div class="contenido-Perfil">
+		<ion-grid>
+			<ion-col col-12 text-center>
+				<h4 *ngIf="hideMe">Editar Perfil</h4>
+				<div class="container">
+					<img class="pantalla-1" src="assets/imgs/userperfil.png">
+				</div>
+				<!-- Nombre de Usuario -->
+				<ion-label class="Infor-Person" *ngIf="!editing"><ion-icon name="person" item-right></ion-icon>&nbsp;&nbsp;
+				{{NombreUsuario}}</ion-label>
+				<ion-item *ngIf="editing" no-lines>
+					<ion-input text-center [(ngModel)]="newNombreUsuario"></ion-input>
+				</ion-item>
+				<!-- Tlf de Usuario -->
+				<ion-label class="Infor-Person" *ngIf="!editing"><ion-icon name="call" item-right></ion-icon>&nbsp;&nbsp;{{TlfUsuario}}</ion-label>
+				<ion-item *ngIf="editing" no-lines>
+					<ion-input type="number" text-center [(ngModel)]="newTlfUsuario"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-grid>
+		<ion-list>
+			<ion-grid>
+				<ion-row class="infor-form">
+					<ion-col col-4>
+						<ion-icon name="ios-pin"></ion-icon>
+						<label class="infor-form__label">Dirección:</label>
+					</ion-col>
+					<ion-col col-8>
+						<div class="form-group">
+							<ion-label class="infor-form__text" *ngIf="!editing">{{Direccion}}</ion-label>
+							<ion-item class="infor-form__item" *ngIf="editing" no-lines>
+								<ion-input text-center [(ngModel)]="newDireccion"></ion-input>
+							</ion-item>
+						</div>
+						<div class="form-group">
+							<ion-label class="infor-form__text" *ngIf="!editing">{{Estado}}</ion-label>
+							<ion-item  *ngIf="editing" no-lines>
+								<ion-input text-center [(ngModel)]="newEstado"></ion-input>
+							</ion-item>
+						</div>
+					</ion-col>
+				</ion-row>
+			<!-- 	<ion-row class="info-form">
+					<ion-col col-4>
+						<ion-icon name="call"></ion-icon>
+						<label class="infor-form__label">Telefono:</label>
+					</ion-col>
+					<ion-col col-8>
+						<div class="form-group">
+							<ion-label class="infor-form__text" *ngIf="!editing">{{NombreUsuario}}</ion-label>
+							<ion-item *ngIf="editing" no-lines>
+								<ion-input text-center [(ngModel)]="newNombreUsuario"></ion-input>
+							</ion-item>
+						</div>
+					</ion-col>
+				</ion-row> -->
+				<ion-row class="infor-form">
+					<ion-col col-4>
+						<ion-icon name="mail"></ion-icon>
+						<label class="infor-form__label">Mail:</label>
+					</ion-col>
+					<ion-col col-8>
+						<div class="form-group">
+							<ion-label class="infor-form__text" *ngIf="!editing">{{Mail}}</ion-label>
+							<ion-item class="infor-form__item" *ngIf="editing" no-lines>
+								<ion-input text-center [(ngModel)]="newMail"></ion-input>
+							</ion-item>
+						</div>
+					</ion-col>
+				</ion-row>
+				<ion-row class="row-buttons">
+					<div class="buttons" *ngIf="editing">
+						<ion-col col-6>
+							<button ion-button (click)="accept()" icon-left>
+								<ion-icon name="checkmark"></ion-icon>
+								Guardar Cambios
+							</button>
+						</ion-col>
+						<ion-col col-6>
+							<button ion-button color="danger" (click)="cancel()" icon-left>
+								<ion-icon name="close"></ion-icon>
+								Cancelar
+							</button>
+						</ion-col>
+					</div>
+				</ion-row>
+			</ion-grid>
+		</ion-list>
+	</div>
+</ion-content>

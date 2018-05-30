@@ -1,0 +1,94 @@
+page-childprofile {
+	.button-inner{
+		color:white;
+		text-shadow: 2px 2px 2px black;
+	}
+	.toolbar-title{
+		font-size: 2.5rem;
+		font-weight:300;
+		text-shadow: 1px 1px 1px black;
+	}
+	ion-title{
+		line-height: 47px;
+	}
+	.button-edit{
+		border-radius:50% !important;
+		width: 30px;
+	}
+	.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+		border-bottom-color: #dedede;
+		-webkit-box-shadow: inset 0 -1px 0 0 #dedede;
+		box-shadow: inset 0 -1px 0 0 #dedede;
+	}
+	.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+		border-bottom-color: #dedede;
+		-webkit-box-shadow: inset 0 -1px 0 0 #dedede;
+		box-shadow: inset 0 -1px 0 0 #dedede;
+	}
+	.item-md .item-button {
+		padding: 0 0.6em;
+		height: 3.6rem;
+		font-size: 1.7rem;
+	}
+	.item-md.item-block .item-inner {
+		padding-right: 8px;
+		border-bottom: 0px;
+	}
+	.Infor-Person{
+		font-size: 15px;
+		font-weight: 450;
+	}
+	.toolbar-background {
+		// background-color: rgba(0,174,239, 0.2);
+		background-color: rgb(252, 171, 56);
+	}
+	.icon-profile{
+		left: 15%;
+		padding: 4px;
+		position: relative;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width:28px !important;
+		height:35px !important;
+	}
+	.contenido-Perfil{
+		background-color: white;
+		border-bottom: 1px solid #dedede;
+		.img-profile{
+			left: 11%;
+			position: relative;
+			margin-top: -23%;
+			bottom: 0;
+			right: 0;
+			width: 130px !important;
+			height: 130px !important;
+		}
+	}
+	.listwo{
+		margin-top:7% !important;
+		background-color:white;
+	}
+	ion-list{
+		background-color:white;
+		.infor-form{
+			&__label{
+				font-size: 16px;
+				color:  rgb(37,119,159);
+				font-weight:bold;
+			}
+			&__text{
+				font-size: 15px;
+				color:  rgb(37,119,159);
+			}		
+		}
+	}
+	.row-buttons{
+		margin-top:7%;
+		text-align: center;
+		display: inline;
+		.buttons{
+			margin-bottom:5%;
+		}
+	}
+}

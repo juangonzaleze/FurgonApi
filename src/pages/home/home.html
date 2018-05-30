@@ -1,0 +1,81 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content class="bg-theme">
+	<ion-header>
+		<ion-navbar>
+			<ion-row>
+				<ion-col col-1 col-md-2>
+					<button ion-button menuToggle clear color="dark">
+						<ion-icon name="menu"></ion-icon>
+					</button>
+				</ion-col>
+				<ion-col col-11 col-md-9>
+					<ion-title text-center>
+						<span class="title-1">Furgón</span><span class="title-2">App</span>
+					</ion-title>
+				</ion-col>
+			</ion-row>
+		</ion-navbar>
+	</ion-header>
+	<div class="sticker">
+	</div>
+	<ion-grid no-padding>
+		<ion-row no-padding>
+			<ion-col col-6 no-padding>
+				<button class="button-home" ion-button block (click)="GoToRutas()" no-padding no-margin no-lines>
+					<div>
+						<img src="assets/imgs/map3.png">
+						<label>Iniciar Ruta</label>
+					</div>
+				</button>
+			</ion-col>
+			<ion-col col-6 no-padding>
+				<button class="button-home" ion-button block  (tap)="openRegistro()" no-padding no-margin no-lines>
+					<div>
+						<img src="assets/imgs/kid.png">
+						<label>Registro de Niños</label>
+					</div>
+				</button>
+			</ion-col>
+			<ion-col col-6 no-padding>
+				<button class="button-home" ion-button block  (tap)="opengestor()" no-padding no-margin no-lines>
+					<div>
+						<img src="assets/imgs/list.png">
+						<label>Gestor de Listas</label>
+					</div>
+				</button>
+			</ion-col>
+			<ion-col col-6 no-padding>
+				<button class="button-home" ion-button block no-padding no-margin no-lines (tap)="openregister()">
+					<div>
+						<img src="assets/imgs/ggg.png">
+						<label>Registro de Furgón</label>
+					</div>
+				</button>
+			</ion-col>
+			<ion-col col-6 no-padding>
+				<button class="button-home" ion-button block (click)="openPage(pages[0])" no-padding no-margin no-lines>
+					<div>
+						<img src="assets/imgs/map2.png">
+						<label>Visualización de Rutas</label>
+					</div>
+				</button>
+			</ion-col>
+		<!-- 	<ion-col col-6 no-padding>
+				<button class="button-home" ion-button block  (click)="openPage(pages[1])" no-padding no-margin no-lines>
+					<div>
+						<ion-icon name="images"></ion-icon>
+						<label>Images</label>
+					</div>
+				</button>
+			</ion-col> -->
+		</ion-row>
+	</ion-grid>
+</ion-content>

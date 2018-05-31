@@ -1,18 +1,51 @@
 page-gestorlist {
-h1,h2,h3,h4,h5{
+	h1,h2,h3,h4,h5{
 		color:  rgb(37,119,159);
 	}
 	.toolbar-background {
 		// background-color: rgba(0,174,239, 0.2);
 		background-color: rgb(252, 171, 56);
 	}
+	.header-c{
+		margin-bottom:0px;
+	}
+	.row-line{
+		line-height:0px;
+	}
+	.bg-theme{
+		background-color: rgba(54,161,213, 0.1);
+	}
+	.bg-profile{
+		background-color:white;
+	}
+	.item-border{
+		border-bottom: 1px solid #dedede !important;
+	}
 	.calle-datos{
 		color: #040404;
-		    margin-top: 14px !important;
+		margin-top: 14px !important;
 	}
 	.list-md .item-block .item-inner {
-    border-bottom: 0px;
-}
+		border-bottom: 0px;
+	}
+	.row-gestor{
+		position: relative;
+		left: 24%;
+		top: -60px;
+	}
+	.col-align{
+		align-self:center;
+	}
+	.icon-profile{
+		width:25px;
+	}
+	.list-style{
+		margin-top: -10%;
+	}
+	.item-edit{
+		width: 240px;
+		padding-left:0px;
+	}
 	.img-profile{
 		width: 80px !important;
 		height: 90px !important;

@@ -1,7 +1,23 @@
 page-childprofile {
+	.bg-theme{
+		background-color: rgba(54,161,213, 0.1);
+	}
 	.button-inner{
 		color:white;
 		text-shadow: 2px 2px 2px black;
+	}
+	.row-style{
+		border-bottom: 1px solid #dedede;
+	}
+	.col-align{
+		align-self:center;
+	}
+	.infor-quest{
+		color: #666;
+	}
+	.item-edit{
+		margin-bottom:10px;
+		width:250px;
 	}
 	.toolbar-title{
 		font-size: 2.5rem;
@@ -55,6 +71,12 @@ page-childprofile {
 	.contenido-Perfil{
 		background-color: white;
 		border-bottom: 1px solid #dedede;
+		.perfil-contenido{
+			padding-top:5%;
+		}
+		ion-row{
+			height:auto;
+		}
 		.img-profile{
 			left: 11%;
 			position: relative;

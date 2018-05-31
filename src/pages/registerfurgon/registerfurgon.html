@@ -1,0 +1,169 @@
+<!--
+  Generated template for the RegisterfurgonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title text-center>Registro de Furgón</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg-theme">
+	<ion-fab bottom right>
+		<button ion-fab class="fab-button" color="yellow" (tap)="MoveToPage()"><img src="assets/imgs/addcar.png"></button>
+	</ion-fab>
+	<div class="contenido-Perfil">
+		<div class="container-infor">
+			<ion-row class="row-style">
+				<ion-col col-4 class="col-align">
+					<ion-avatar text-center>
+						<img class="img-profile" src="assets/imgs/chofer.png">
+					</ion-avatar>
+				</ion-col>
+				<ion-col col-8>
+					<ion-row>
+						<ion-col col-2>
+							<img class="icon-profile" src="assets/imgs/name.png">
+						</ion-col>
+						<ion-col col-10 style="align-self: center" no-padding>
+							<p class="infor-quest">Nombre</p>
+							<ion-label class="Infor-Person">Pedro Jimenez</ion-label>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col col-2>
+							<img class="icon-profile" src="assets/imgs/phone.png">
+						</ion-col>
+						<ion-col col-10 style="align-self: center" no-padding>
+							<p class="infor-quest">Telefono</p>
+							<ion-label class="Infor-Person">0000-000-0000</ion-label>
+						</ion-col>
+					</ion-row>
+				</ion-col>
+			</ion-row>
+		</div>
+	</div>
+	<ion-list>
+		<ion-row class="row-style">
+			<ion-col col-2 class="col-align">
+				<ion-avatar item-start>
+					<img class="icon-profile" src="assets/imgs/pins.png">
+				</ion-avatar>
+			</ion-col>
+			<ion-col col-10 no-padding>
+				<p class="infor-quest">Dirección</p>
+				<ion-label class="Infor-Person">Calle # Esquina #</ion-label>
+			</ion-col>
+		</ion-row>
+	</ion-list>
+	<ion-list class="listwo">
+		<ion-row class="row-style">
+			<ion-col col-2 class="col-align">
+				<ion-avatar item-start>
+					<img class="icon-profile" src="assets/imgs/furgon.png">
+				</ion-avatar>
+			</ion-col>
+			<ion-col col-10 no-padding>
+				<p class="title-car">Vehículos Registrados</p>
+			</ion-col>
+		</ion-row>
+		<ion-row class="row-style">
+			<ion-item-sliding>
+				<ion-item>
+					<ion-avatar item-start>
+						<img src="assets/imgs/furgon2.png">
+					</ion-avatar>
+					<h2>Peugeot Expert 2009</h2>
+					<p>00D00</p>
+				</ion-item>
+				<ion-item-options side="right" class="items-options">
+					<ion-row text-center>
+						<ion-col col-2>
+						</ion-col>
+						<ion-col col-4 no-padding>
+							<button ion-button color="primary">
+								<ion-icon name="create"></ion-icon>
+								Editar
+							</button>
+						</ion-col>
+						<ion-col col-4 no-padding>
+							<button ion-button color="danger">
+								<ion-icon name="trash"></ion-icon>
+								Borrar
+							</button>
+						</ion-col>
+						<ion-col col-2>
+						</ion-col>
+					</ion-row>
+				</ion-item-options>
+			</ion-item-sliding>
+		</ion-row>
+		<ion-row class="row-style">
+			<ion-item-sliding>
+				<ion-item>
+					<ion-avatar item-start>
+						<img src="assets/imgs/furgon2.png">
+					</ion-avatar>
+					<h2>Peugeot Expert 2009</h2>
+					<p>00D00</p>
+				</ion-item>
+				<ion-item-options side="right" class="items-options">
+					<ion-row text-center>
+						<ion-col col-2>
+						</ion-col>
+						<ion-col col-4 no-padding>
+							<button ion-button color="primary">
+								<ion-icon name="create"></ion-icon>
+								Editar
+							</button>
+						</ion-col>
+						<ion-col col-4 no-padding>
+							<button ion-button color="danger">
+								<ion-icon name="trash"></ion-icon>
+								Borrar
+							</button>
+						</ion-col>
+						<ion-col col-2>
+						</ion-col>
+					</ion-row>
+				</ion-item-options>
+			</ion-item-sliding>
+		</ion-row>
+		<ion-row class="row-style">
+			<ion-item-sliding>
+				<ion-item>
+					<ion-avatar item-start>
+						<img src="assets/imgs/furgon2.png">
+					</ion-avatar>
+					<h2>Peugeot Expert 2009</h2>
+					<p>00D00</p>
+				</ion-item>
+				<ion-item-options side="right" class="items-options">
+					<ion-row text-center>
+						<ion-col col-2>
+						</ion-col>
+						<ion-col col-4 no-padding>
+							<button ion-button color="primary">
+								<ion-icon name="create"></ion-icon>
+								Editar
+							</button>
+						</ion-col>
+						<ion-col col-4 no-padding>
+							<button ion-button color="danger">
+								<ion-icon name="trash"></ion-icon>
+								Borrar
+							</button>
+						</ion-col>
+						<ion-col col-2>
+						</ion-col>
+					</ion-row>
+				</ion-item-options>
+			</ion-item-sliding>
+		</ion-row>
+	</ion-list>
+</ion-content>

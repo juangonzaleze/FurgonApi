@@ -1,40 +1,35 @@
 <ion-menu type="overlay" [content]="content"  class="menu-o">
-  <ion-header>
-    <ion-toolbar>
-      <button ion-button menuToggle>
+  <ion-content>
+    
+      <button ion-button menuToggle class="button-back">
         <ion-icon name="arrow-round-back"></ion-icon>
       </button>
-      <ion-title text-center>Menu de Usuario</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <ion-grid>
+<!--       <ion-title text-center>Menu de Usuario</ion-title>
+ -->        <ion-grid>
       <ion-col col-12 text-center>
         <div class="container">
           <img class="pantalla-1" src="assets/imgs/userperfil.png">
         </div>
-        <h4>Usuario Nombre</h4>
-        <h5>Tlf : 0000000</h5>
+        <h4>Pedro Jimenez</h4>
+        <h6 class="sst"><span class="icon-style"><ion-icon style="text-shadow: 1px 1px 1px black;color: #00b8c8;" name="ios-call" item-start></ion-icon></span>&nbsp;<span style="color:#00a4c0">Teléfono</span>&nbsp;<u>+44 7700 900302</u></h6>
       </ion-col>
-      <hr>
     </ion-grid>
     <ion-list>
-      <ion-item no-lines>
-        <button ion-button icon-left clear (tap)="openPage(pages[0])">
-          <ion-icon name="create" item-start></ion-icon>
+      <ion-item no-padding style="border-top: 2px solid #dedede;">
+        <button ion-button icon-left clear style="text-transform:none;" no-margin (tap)="openPage(pages[0])">
+          <ion-icon style="text-shadow: 1px 1px 1px black;color: #00b8c8;" name="create" item-start></ion-icon>
           <h5>Editar usuario</h5>
         </button>
       </ion-item>
-      <ion-item no-lines>
-       <button ion-button icon-left clear>
-        <ion-icon name="key" item-start></ion-icon>
+      <ion-item no-padding>
+       <button ion-button icon-left clear style="text-transform:none;" no-margin>
+        <ion-icon style="text-shadow: 1px 1px 1px black;color: #00b8c8;" name="key" item-start></ion-icon>
         <h5>Cambiar contraseña</h5>
       </button>
     </ion-item>
-    <ion-item no-lines>
-     <button ion-button icon-left clear>
-      <ion-icon name="log-out" item-start></ion-icon>
+    <ion-item no-padding>
+     <button ion-button icon-left clear style="text-transform:none;" no-margin>
+      <ion-icon style="text-shadow: 1px 1px 1px black;color: #00b8c8;" name="log-out" item-start></ion-icon>
       <h5>Cerrar Sesión</h5>
     </button>
   </ion-item>

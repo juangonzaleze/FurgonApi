@@ -8,13 +8,20 @@ page-rutas {
 		top: 45px;
 		overflow:auto;
 	}
+	.bg-theme{
+		background-color: rgba(54,161,213, 0.1);
+	}
+	.item-md.item-block .item-inner {
+		padding-right: 8px;
+		border-bottom: 0px;
+	}
 	ion-segment {
 		display: block;
 		white-space: nowrap;
 		font-size: 0;
 		overflow: auto;
 
-		&::-webkit-scrollbar {
+		&-webkit-scrollbar {
 			width: 0;
 			height: 0;
 			display: none;
@@ -28,24 +35,39 @@ page-rutas {
 		}
 	}
 	.toolbar-title{
+		font-size: 2.5rem;
+		font-weight:300;
+		text-shadow: 1px 1px 1px black;
+	}
+	.button-inner{
 		color:white;
+		text-shadow: 2px 2px 2px black;
 	}
 	.next-button{
 		position: absolute !important;
 		z-index: 1000 !important;
-		top: 76% !important;
+		top: 61.3% !important;
 		opacity:1 !important;
 		padding: 0px !important;
 		left: 84% !important;
 		border: 1px solid;
-		border-color: red !important;
+		border-color: rgb(252, 171, 56) !important;
 		color: black !important;
-		background-color: red !important;
+		background-color: #13818d !important;
 		width: 45px !important;
 		min-width: 40px !important;
 		border-radius: 50% !important;
 		height: 50px !important;
+		.img-next{
+			width:50px;
+			height:47px;
+		}
 	}
+	// .list-recorrido{
+	// 	height: 220px;
+	// 	overflow: -webkit-paged-x;
+	// 	overflow: x;
+	// }
 	.back-button.show-back-button {
 		display: inline-block;
 		color: white;
@@ -56,7 +78,7 @@ page-rutas {
 
 	#map {
 		width: 100%;
-		height: 80%;
+		height: 65%;
 	}
 	.contenedor-rutas{
 		margin-top:3%;
@@ -72,14 +94,14 @@ page-rutas {
 	.content-card{
 		margin-top: -20px;
 	}
+
 	ion-header::after {
-		background-color:rgba(0,0,0,0.5) !important;
-		;
+		background-color: rgba(252,171,56,0.5) !important;
 		background-image: none !important;
 	}
 	.toolbar {
 		.toolbar-background{
-			background-color:rgba(0,0,0,0.5) !important;
+			background-color: rgba(252,171,56,0.5) !important;
 		}
 	}
 	a[href^="http://maps.google.com/maps"]{
@@ -94,4 +116,120 @@ page-rutas {
 	div.gmnoprint { 
 		padding-top: 50px; 
 	}
-}
+	.boxes {
+		margin: auto;
+	}
+	.radio-md .radio-inner {
+		left: 2px;
+		top: 2px;
+		border-radius: 50%;
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		background-color: #488aff;  
+	}
+	.radio-md .radio-checked {
+		border-color: darkblue;
+	}
+	.radio-md .radio-icon {
+		left: 0;
+		top: 0;
+		margin: 0;
+		border-radius: 50%;
+		position: relative;
+		display: block;
+		width: 20px;
+		height: 20px;
+		border-width: 2px;
+		border-style: dashed;
+		border-color: black;
+	}
+	ion-select {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		overflow: hidden;
+		max-width: 50%;
+	}
+	.item-border{
+		border-bottom: 1px solid #dedede !important;
+	}
+	.img-profile{
+		width: 80px !important;
+		height: 90px !important;
+		margin-top: 7px !important;
+	}
+	.calle-datos{
+		color: #040404;
+		margin-top: 22px !important;
+	}
+	.row-line{
+		line-height:0px;
+		position: relative;
+		left: 22%;
+		top: -52px;
+	}
+	.no-search{
+		padding-right:16px;
+		text-align:center;
+	}
+	.icon-profile{
+		width:25px;
+	}
+	.col-align{
+		align-self:center;
+	}
+	.select-md {
+		padding: 13px 4px 13px 1px;
+	}
+	.row-select{
+		position: relative;
+		top: -60px;
+		left: 24%;
+	}
+
+	/*Checkboxes styles*/
+	// .checkbox-edit { display: none; }
+
+	// .checkbox-edit + label {
+		// 	display: block;
+		// 	position: relative;
+		// 	padding-left: 35px;
+		// 	margin-bottom: 20px;
+		// 	font-family: 'SuecaSemiBold', sans-serif;
+		// 	cursor: pointer;
+		// 	-webkit-user-select: none;
+		// 	-moz-user-select: none;
+		// 	-ms-user-select: none;
+		// }
+
+		// .checkbox-edit + label:last-child { margin-bottom: 0; }
+
+		// .checkbox-edit + label:before {
+			// 	content: '';
+			// 	display: block;
+			// 	width: 20px;
+			// 	height: 20px;
+			// 	border: 1px solid red;
+			// 	position: absolute;
+			// 	left: 0;
+			// 	top: 0;
+			// 	opacity: .6;
+			// 	-webkit-transition: all .12s, border-color .08s;
+			// 	transition: all .12s, border-color .08s;
+			// }
+
+			// .checkbox-edit:checked + label:before {
+				// 	width: 10px;
+				// 	top: -5px;
+				// 	left: 5px;
+				// 	border-radius: 0;
+				// 	opacity: 1;
+				// 	border-top-color: transparent;
+				// 	border-left-color: transparent;
+				// 	-webkit-transform: rotate(45deg);
+				// 	transform: rotate(45deg);
+				// }
+
+			}

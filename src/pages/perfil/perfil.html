@@ -8,7 +8,7 @@
 	<ion-navbar>
 		<ion-row>
 			<ion-col col-10>
-				<ion-title text-center>perfil</ion-title>
+				<ion-title text-center>Perfil de Usuario</ion-title>
 			</ion-col>
 			<ion-col col-2>
 				<button ion-button class="button-edit" *ngIf="!editing" (tap)="startEditing()" icon-only float-right>
@@ -20,7 +20,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="bg-theme">
 	<div class="contenido-Perfil">
 		<ion-grid>
 			<ion-col col-12 text-center>
@@ -55,12 +55,6 @@
 								<ion-input text-center [(ngModel)]="newDireccion"></ion-input>
 							</ion-item>
 						</div>
-						<div class="form-group">
-							<ion-label class="infor-form__text" *ngIf="!editing">{{Estado}}</ion-label>
-							<ion-item  *ngIf="editing" no-lines>
-								<ion-input text-center [(ngModel)]="newEstado"></ion-input>
-							</ion-item>
-						</div>
 					</ion-col>
 				</ion-row>
 			<!-- 	<ion-row class="info-form">
@@ -79,14 +73,14 @@
 				</ion-row> -->
 				<ion-row class="infor-form">
 					<ion-col col-4>
-						<ion-icon name="mail"></ion-icon>
-						<label class="infor-form__label">Mail:</label>
+						<ion-icon name="card"></ion-icon>
+						<label class="infor-form__label">DNI:</label>
 					</ion-col>
 					<ion-col col-8>
 						<div class="form-group">
-							<ion-label class="infor-form__text" *ngIf="!editing">{{Mail}}</ion-label>
+							<ion-label class="infor-form__text" *ngIf="!editing">{{DNI}}</ion-label>
 							<ion-item class="infor-form__item" *ngIf="editing" no-lines>
-								<ion-input text-center [(ngModel)]="newMail"></ion-input>
+								<ion-input text-center [(ngModel)]="newDNI"></ion-input>
 							</ion-item>
 						</div>
 					</ion-col>

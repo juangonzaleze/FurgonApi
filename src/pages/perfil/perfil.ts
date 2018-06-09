@@ -25,8 +25,8 @@ import { UsereditPage } from '../useredit/useredit';
    newDireccion: string;
    @Input() Estado: string = "Portuguesa";
    newEstado: string;
-   @Input() Mail: string = "Usuario@Gmail.com";
-   newMail: string;
+   @Input() DNI: string = "12345678";
+   newDNI: string;
    @Output() valueChange = new EventEmitter<string>();
    editing: boolean;
 
@@ -53,7 +53,7 @@ import { UsereditPage } from '../useredit/useredit';
      // Estado de Usuario
      this.newEstado = this.Estado;
      // Mail de Usuario
-     this.newMail = this.Mail;
+     this.newDNI = this.DNI;
    }
 
    startEditing(): void {
@@ -80,8 +80,8 @@ import { UsereditPage } from '../useredit/useredit';
      this.valueChange.emit(this.newEstado);
      this.editing = false;
      // Mail de Usuario
-     this.Mail = this.newMail;
-     this.valueChange.emit(this.newMail);
+     this.DNI = this.newDNI;
+     this.valueChange.emit(this.newDNI);
      this.editing = false;
    }
 
@@ -100,7 +100,7 @@ import { UsereditPage } from '../useredit/useredit';
      this.newEstado = this.Estado;
      this.editing = false;
      // Mail de Usuario
-     this.newMail = this.Mail;
+     this.newDNI = this.DNI;
      this.editing = false;
    }
  }

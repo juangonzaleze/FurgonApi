@@ -1,169 +1,60 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>Gestor de Lista</ion-title>
-    <ion-buttons end>
-      <button ion-button small clear (click)="actionBtn();">
-        {{btnName}}
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="bg-theme"> 
-  <ion-fab bottom right>
-    <button ion-fab mini color="yellow"><ion-icon name="md-person-add"></ion-icon></button>
+  <ion-fab bottom right (tap)="showPrompt()">
+    <button ion-fab mini color="yellow"><img class="img-fab" src="assets/imgs/addlist.png"></button>
   </ion-fab>
   <ion-list-header class="header-c">
    Datos Chofer
-  </ion-list-header>
-  <ion-row class="bg-profile">
-    <ion-col col-3>
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/chofer.png">
-      </ion-avatar>
-    </ion-col>
-    <ion-col col-9>
-      <h3>Pedro Jimenez</h3>
-    </ion-col>
-  </ion-row>
-  <ion-row class="row-gestor">
-    <ion-col col-1 class="col-align">
-      <img class="icon-profile" src="assets/imgs/home.png">
-    </ion-col>
-    <ion-col col-10 class="col-align" no-padding>
-       <ion-label *ngIf="!editing">{{value}}&nbsp;&nbsp;<span><ion-icon name="create" *ngIf="!editing" (tap)="startEditing()"></ion-icon></span></ion-label>
-       <ion-item class="item-edit" *ngIf="editing">
-          <ion-input [(ngModel)]="newValue"></ion-input>
-          <div class="buttons" item-right>
-            <button ion-button (click)="accept()">
-              <ion-icon name="checkmark"></ion-icon>
-            </button>
-            <button ion-button (click)="cancel()">
-              <ion-icon name="close"></ion-icon>
-            </button>
-          </div>
-       </ion-item>
-    </ion-col>
-  </ion-row>
+ </ion-list-header>
+ <ion-row class="bg-profile">
+  <ion-col col-3>
+    <ion-avatar item-start>
+      <img class="img-profile" src="assets/imgs/chofer.png">
+    </ion-avatar>
+  </ion-col>
+  <ion-col col-9>
+    <h3>Pedro Jimenez</h3>
+  </ion-col>
+</ion-row>
+<ion-row class="row-gestor">
+  <ion-col col-1 class="col-align">
+    <img class="icon-profile" src="assets/imgs/home.png">
+  </ion-col>
+  <ion-col col-10 class="col-align" no-padding>
+   <ion-label>Calle #  Esquina #</ion-label>
+</ion-col>
+</ion-row>
 <!--   Lista del Gestor -->
-  <ion-list no-lines class="list-style">
-    <ion-list-header>
-      <h3 text-center>Lista del Recorrido</h3>
-    </ion-list-header>
-    <ion-item-group reorder="{{flag}}"  (ionItemReorder)="reorderItems($event);">
-      <ion-item-sliding>
-        <ion-item class="item-border" (tap)="MoveToPerfil()">
-          <ion-avatar item-start>
-            <img class="img-profile" src="assets/imgs/kiid.png">
-          </ion-avatar>
-          <h2>Juan Gonzalez</h2>
-          <ion-row class="row-line">
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/home.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p class="calle-datos">Calle # Esquina #</p>
-            </ion-col>
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/school.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p>San Jose</p>
-            </ion-col>
-          </ion-row>
+<ion-list class="accordion-list">
+  <!-- First Level -->
+  <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
+    <!-- Toggle Button -->
+    <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+      <!-- <ion-icon item-left name="clipboard"></ion-icon> -->
+      <ion-icon item-left ios="ios-folder" md="ios-folder" *ngIf="!item.open"></ion-icon>
+      <ion-icon item-left ios="ios-folder-open-outline" md="ios-folder-open-outline" *ngIf="item.open"></ion-icon>
+      {{ item.name }}
+      <ion-icon item-right name="arrow-forward" *ngIf="!item.open"></ion-icon>
+      <ion-icon item-right name="arrow-down" *ngIf="item.open"></ion-icon>
+    </button>
+
+    <ion-list *ngIf="item.children && item.open" no-lines>
+      <!-- Second Level -->
+      <ion-list-header class="header-accordion" (tap)="MoveToList()" *ngFor="let child of item.children; let j = index" no-padding >
+        <!-- Direct Add Button as Fallback -->
+        <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+          <h2>{{ child.name }}</h2>
+          <ion-icon item-right style="font-size:20px;" name="create" ></ion-icon>
+          <ion-icon item-right style="font-size:20px;" name="trash"></ion-icon>
         </ion-item>
-        <ion-item-options side="right">
-          <button ion-button color="primary">
-            <ion-icon name="trash"></ion-icon>
-            Quitar
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-      <ion-item-sliding>
-        <ion-item class="item-border" (tap)="MoveToPerfil()">
-          <ion-avatar item-start>
-            <img class="img-profile" src="assets/imgs/kiid.png">
-          </ion-avatar>
-          <h2>Juan Gonzalez</h2>
-          <ion-row class="row-line">
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/home.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p class="calle-datos">Calle # Esquina #</p>
-            </ion-col>
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/school.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p>San Jose</p>
-            </ion-col>
-          </ion-row>
-        </ion-item>
-        <ion-item-options side="right">
-          <button ion-button color="primary">
-            <ion-icon name="trash"></ion-icon>
-            Quitar
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-      <ion-item-sliding>
-        <ion-item class="item-border" (tap)="MoveToPerfil()">
-          <ion-avatar item-start>
-            <img class="img-profile" src="assets/imgs/kiid.png">
-          </ion-avatar>
-          <h2>Juan Gonzalez</h2>
-          <ion-row class="row-line">
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/home.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p class="calle-datos">Calle # Esquina #</p>
-            </ion-col>
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/school.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p>San Jose</p>
-            </ion-col>
-          </ion-row>
-        </ion-item>
-        <ion-item-options side="right">
-          <button ion-button color="primary">
-            <ion-icon name="trash"></ion-icon>
-            Quitar
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-      <ion-item-sliding>
-        <ion-item class="item-border" (tap)="MoveToPerfil()">
-          <ion-avatar item-start>
-            <img class="img-profile" src="assets/imgs/kiid.png">
-          </ion-avatar>
-          <h2>Juan Gonzalez</h2>
-          <ion-row class="row-line">
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/home.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p class="calle-datos">Calle # Esquina #</p>
-            </ion-col>
-            <ion-col col-2>
-              <img class="icon-profile" src="assets/imgs/school.png">
-            </ion-col>
-            <ion-col col-10 class="col-align" no-padding>
-              <p>San Jose</p>
-            </ion-col>
-          </ion-row>
-        </ion-item>
-        <ion-item-options side="right">
-          <button ion-button color="primary">
-            <ion-icon name="trash"></ion-icon>
-            Quitar
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-item-group>
-  </ion-list>
-  <!-- Lista del Gestor End -->
+      </ion-list-header>
+    </ion-list>
+  </ion-list-header>
+</ion-list>
+<!-- Lista del Gestor End -->
 </ion-content>

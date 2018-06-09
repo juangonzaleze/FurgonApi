@@ -2,9 +2,25 @@ page-perfil {
 	ion-title{
 		line-height: 47px;
 	}
+	.bg-theme{
+		background-color: rgba(54,161,213, 0.1);
+	}
 	.button-edit{
 		border-radius:50% !important;
 		width: 30px;
+	}
+	.toolbar-title{
+		font-size: 2.5rem;
+		font-weight:300;
+		text-shadow: 1px 1px 1px black;
+	}
+	.toolbar-background {
+		// background-color: rgba(0,174,239, 0.2);
+		background-color: rgb(252, 171, 56);
+	}
+	.button-inner{
+		color:white;
+		text-shadow: 2px 2px 2px black;
 	}
 	.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
 		border-bottom-color: #dedede;

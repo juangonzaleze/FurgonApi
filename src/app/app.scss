@@ -5,8 +5,8 @@
         }
     }
     .icon-style{
-            margin-top: 4px;
-    font-size: 20px;
+        margin-top: 4px;
+        font-size: 20px;
     }
     .sst{
         margin-top: -0.4rem;
@@ -58,18 +58,18 @@
             margin-top: -7px;
         }
         .container img {
-           background-color: white;
-           padding: 1%;
-           height: auto;
-           width: auto;
-           max-width:126.6px;
-           min-height: 145px;
-           border: 1px solid #ccc;
-           border-radius: 50%;
-           margin: auto;
-           box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
-           vertical-align: middle;
-           .pantalla-1{
+         background-color: white;
+         padding: 1%;
+         height: auto;
+         width: auto;
+         max-width:126.6px;
+         min-height: 145px;
+         border: 1px solid #ccc;
+         border-radius: 50%;
+         margin: auto;
+         box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+         vertical-align: middle;
+         .pantalla-1{
             width: 150px;
             height: auto;
             max-height: 145px;
@@ -106,4 +106,32 @@ ion-item {
 .menu-inner {
     width: 100%;
 }
+}
+.alert-md .alert-button-group {
+    justify-content: center ;
+}
+.alert-md .alert-head {
+    text-align: center;
+}
+ion-alert.alert-top {
+     padding: 0 !important;
+    align-items: center !important;
+}
+.alertCustomCss {
+    // text color for basic alerts
+    color:#040404;
+    button {
+        color: #040404 !important; // button text color
+        background-color: color($colors, secondary, base) !important;
+        //button bg color
+    }
+
+    .alert-message {
+        color:#040404;
+    }
+
+    .alert-wrapper {
+        border:1px solid rgb(252, 171, 56);
+        border-radius:5px;
+    }
 }

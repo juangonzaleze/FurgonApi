@@ -1,0 +1,169 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Gestor de Lista</ion-title>
+    <ion-buttons end>
+      <button ion-button small clear (click)="actionBtn();">
+        {{btnName}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-theme"> 
+  <ion-fab bottom right>
+    <button ion-fab mini color="yellow"><ion-icon name="md-person-add"></ion-icon></button>
+  </ion-fab>
+  <ion-list-header class="header-c">
+   Datos Chofer
+  </ion-list-header>
+  <ion-row class="bg-profile">
+    <ion-col col-3>
+      <ion-avatar item-start>
+        <img class="img-profile" src="assets/imgs/chofer.png">
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-9>
+      <h3>Pedro Jimenez</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row-gestor">
+    <ion-col col-1 class="col-align">
+      <img class="icon-profile" src="assets/imgs/home.png">
+    </ion-col>
+    <ion-col col-10 class="col-align" no-padding>
+       <ion-label *ngIf="!editing">{{value}}&nbsp;&nbsp;<span><ion-icon name="create" *ngIf="!editing" (tap)="startEditing()"></ion-icon></span></ion-label>
+       <ion-item class="item-edit" *ngIf="editing">
+          <ion-input [(ngModel)]="newValue"></ion-input>
+          <div class="buttons" item-right>
+            <button ion-button (click)="accept()">
+              <ion-icon name="checkmark"></ion-icon>
+            </button>
+            <button ion-button (click)="cancel()">
+              <ion-icon name="close"></ion-icon>
+            </button>
+          </div>
+       </ion-item>
+    </ion-col>
+  </ion-row>
+<!--   Lista del Gestor -->
+  <ion-list no-lines class="list-style">
+    <ion-list-header>
+      <h3 text-center>Lista del Recorrido</h3>
+    </ion-list-header>
+    <ion-item-group reorder="{{flag}}"  (ionItemReorder)="reorderItems($event);">
+      <ion-item-sliding>
+        <ion-item class="item-border" (tap)="MoveToPerfil()">
+          <ion-avatar item-start>
+            <img class="img-profile" src="assets/imgs/kiid.png">
+          </ion-avatar>
+          <h2>Juan Gonzalez</h2>
+          <ion-row class="row-line">
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/home.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p class="calle-datos">Calle # Esquina #</p>
+            </ion-col>
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/school.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p>San Jose</p>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="trash"></ion-icon>
+            Quitar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
+        <ion-item class="item-border" (tap)="MoveToPerfil()">
+          <ion-avatar item-start>
+            <img class="img-profile" src="assets/imgs/kiid.png">
+          </ion-avatar>
+          <h2>Juan Gonzalez</h2>
+          <ion-row class="row-line">
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/home.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p class="calle-datos">Calle # Esquina #</p>
+            </ion-col>
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/school.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p>San Jose</p>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="trash"></ion-icon>
+            Quitar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
+        <ion-item class="item-border" (tap)="MoveToPerfil()">
+          <ion-avatar item-start>
+            <img class="img-profile" src="assets/imgs/kiid.png">
+          </ion-avatar>
+          <h2>Juan Gonzalez</h2>
+          <ion-row class="row-line">
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/home.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p class="calle-datos">Calle # Esquina #</p>
+            </ion-col>
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/school.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p>San Jose</p>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="trash"></ion-icon>
+            Quitar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
+        <ion-item class="item-border" (tap)="MoveToPerfil()">
+          <ion-avatar item-start>
+            <img class="img-profile" src="assets/imgs/kiid.png">
+          </ion-avatar>
+          <h2>Juan Gonzalez</h2>
+          <ion-row class="row-line">
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/home.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p class="calle-datos">Calle # Esquina #</p>
+            </ion-col>
+            <ion-col col-2>
+              <img class="icon-profile" src="assets/imgs/school.png">
+            </ion-col>
+            <ion-col col-10 class="col-align" no-padding>
+              <p>San Jose</p>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="trash"></ion-icon>
+            Quitar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <!-- Lista del Gestor End -->
+</ion-content>

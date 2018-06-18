@@ -1,0 +1,91 @@
+page-perfilpadre {
+.bg-theme{
+		background-color: rgba(54,161,213, 0.1);
+	}
+	.col-align{
+		align-self:center;
+	}
+	.fab-button{
+		padding:10px;
+	}
+	.title-1{
+		color:#040404;
+	}
+	.infor-quest{
+		color: #666;
+	}
+	.container-infor{
+		padding-top: 5%;
+	}
+	.row-style{
+		border-bottom: 1px solid #dedede;
+	}
+	.title-car{
+		color: #040404;
+		text-shadow: 1px 1px 1px black;
+	}
+	.items-options{
+		width:100%;
+		ion-row{
+			width:100%;
+			button{
+				width:90%;
+			}
+
+		}
+	}
+	.button-inner{
+		color:white;
+		text-shadow: 2px 2px 2px black;
+	}
+	.toolbar-title{
+		font-size: 2.5rem;
+		font-weight:300;
+		text-shadow: 1px 1px 1px black;
+	}
+	ion-title{
+		line-height: 47px;
+	}
+	.item-md .item-button {
+		padding: 0 0.6em;
+		height: 3.6rem;
+		font-size: 1.7rem;
+	}
+	.Infor-Person{
+		font-size: 15px;
+		font-weight: 450;
+	}
+	.toolbar-background {
+		// background-color: rgba(0,174,239, 0.2);
+		background-color: rgb(252, 171, 56);
+	}
+	.icon-profile{
+		left: 15%;
+		padding: 4px;
+		position: relative;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width:35px !important;
+		height:35px !important;
+	}
+	.contenido-Perfil{
+		background-color: white;
+		border-bottom: 1px solid #dedede;
+		.img-profile{
+			left: 11%;
+			position: relative;
+			margin-top: -15%;
+			bottom: 0;
+			right: 0;
+			width: 120px !important;
+			height: 120px !important;
+		}
+	}
+	.listwo{
+		margin-top:7% !important;
+	}
+	ion-list{
+		background-color:white;
+	}
+}

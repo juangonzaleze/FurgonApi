@@ -1,0 +1,50 @@
+page-registropadre {
+	h1,h2,h3,h4,h5{
+		color:  #040404;
+	}
+	.fab {
+    width: 40px;
+    height: 40px;
+}
+	.toolbar-background {
+		// background-color: rgba(0,174,239, 0.2);
+		background-color: rgb(252, 171, 56);
+	}
+	p{
+		color: #040404;
+	}
+	.list-md .item-block .item-inner {
+		border-bottom: 0px;
+	}
+	.img-profile{
+		width: 70px !important;
+		height: 70px !important;
+		margin-top: -15px !important;
+	}
+	.toolbar-title{
+		font-size: 2.5rem;
+		font-weight:300;
+		text-shadow: 1px 1px 1px black;
+	}
+	.title-1{
+		color:#040404;
+	}
+	.title-2{
+		color:#e7cb3f;
+		font-weight:500;
+	}
+	.title-acc{
+		text-shadow: 1px 1px 0px black;
+		font-weight: 600;
+		font-size: 1.7rem;
+	}
+	.title-list{
+		color:black;
+		font-weight:500;
+		font-size: 1.9rem;
+	}
+	.button-inner{
+		color:white;
+		text-shadow: 2px 2px 2px black;
+	}
+}

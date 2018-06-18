@@ -17,6 +17,7 @@ page-gestorlist {
 	}
 	.bg-profile{
 		background-color:white;
+    border-bottom: 2px solid #dedede;
 	}
 	.img-fab{
 		padding: 3px;
@@ -88,7 +89,8 @@ page-gestorlist {
 	.section {
 		background: #fff;
 		color: #000;
-		margin-bottom: 4px;
+		border-top: 2px solid #dedede;
+		border-bottom: 2px solid #dedede;
 	}
 	.section-active {
 		background-color: rgb(252, 171, 56);
@@ -104,13 +106,13 @@ page-gestorlist {
 	}
 	.child-item {
 		background: #f3f2f1;
-		border-bottom: 1px solid #dedede !important;
+		border-bottom: 2px solid #dedede !important;
 	}
 	.label {
 		margin: 0px;
 	}
 	.list {
-		margin-bottom: 4px;
+		margin-bottom: 0px;
 	}
 	.item-md ion-icon[item-left] + .item-inner, .item-md ion-icon[item-left] + .item-input, .item-md ion-icon[item-start] + .item-inner, .item-md ion-icon[item-start] + .item-input {
 		margin-left: 0px;

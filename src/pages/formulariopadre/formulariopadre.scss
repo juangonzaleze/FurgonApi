@@ -1,0 +1,61 @@
+page-formulariopadre {
+.toolbar-background {
+		// background-color: rgba(0,174,239, 0.2);
+		background-color: rgb(252, 171, 56);
+	}
+	.title-1{
+		color:#040404;
+	}
+	.button-inner{
+		color:white;
+		text-shadow: 2px 2px 2px black;
+	}
+	.toolbar-title{
+		font-size: 2.5rem;
+		font-weight:300;
+		text-shadow: 1px 1px 1px black;
+	}
+	// .button-inner{
+	// 	color:black;
+	// }
+	.icon-profile{
+		width:60px !important;
+		height:60px !important;
+	}
+	.content-registro{
+		position:absolute;
+	}
+	.label-md[stacked] {
+		font-size: 1.5rem;
+		margin-bottom:2px;
+	}
+	.create-icon{
+		font-size: 1.2em;
+	}
+	ion-icon {
+		display: inline-block;
+		font-size: 1.2em;
+	}
+	.item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+		border:0px;
+		box-shadow:none;
+	}
+	.title-infor{
+		margin-top: 0.6rem !important;
+	}
+	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+		color: #000;
+	}
+	.custom-login-label input[type]{
+		margin-left: 30px;
+		line-height: 30px;
+		border-bottom: 1px solid #e7cb3f;
+	}
+	.custom-login-label ion-icon {
+		position: absolute;
+		bottom: 17px;
+	}
+	.buttons-section{
+		margin-top:5%;
+	}
+}

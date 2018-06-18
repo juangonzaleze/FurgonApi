@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChildprofilePage {
 	hideMe=false;
-   @Input() NombreUsuario: string = "Juan Gonzalez";
+   @Input() NombreUsuario: string = "Luis Rodriguez";
    newNombreUsuario: string;
    @Input() TlfUsuario: string = "0000-000-0000";
    newTlfUsuario: string;

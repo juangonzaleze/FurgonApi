@@ -2,9 +2,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 import { RutasPage } from '../rutas/rutas';
-import { RegistrochildPage } from '../registrochild/registrochild';
+import { RegistropadrePage } from '../registropadre/registropadre';
 import { GestorlistPage } from '../gestorlist/gestorlist';
 import { RegisterfurgonPage } from '../registerfurgon/registerfurgon';
+import { PerfilpadrePage } from '../perfilpadre/perfilpadre';
 
 
 @IonicPage()
@@ -30,13 +31,16 @@ export class HomePage {
   	this.navCtrl.push(RutasPage)
   }
   openRegistro(){
-    this.navCtrl.push(RegistrochildPage)
+    this.navCtrl.push(RegistropadrePage)
   }
   opengestor(){
     this.navCtrl.push(GestorlistPage)
   }
   openregister(){
     this.navCtrl.push(RegisterfurgonPage)
+  }
+  openRegistronino(){
+    this.navCtrl.push(PerfilpadrePage)
   }
  
 

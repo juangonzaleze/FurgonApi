@@ -1,4 +1,7 @@
 .menu-o {
+    .icon-menuu{
+        color: #666;
+    }
     ion-header {
         .toolbar-background {
             background-color: #0d6fab;
@@ -50,10 +53,17 @@
         h1 , h2 , h3 , h4 , h5 {
             color:black;
         }
-        -webkit-box-shadow: inset -1px 6px 12px 9px rgba(54,161,213, 1);
-        -moz-box-shadow: inset -1px 6px 54px 4px rgba(54,161,213, 1);
-        box-shadow: inset -1px 6px 54px 9px rgba(54,161,213, 1);
-        background-color: #0d6fab;
+                       position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: url(../assets/imgs/bgmenu.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        // -webkit-box-shadow: inset -1px 6px 12px 9px rgba(54,161,213, 1);
+        // -moz-box-shadow: inset -1px 6px 54px 4px rgba(54,161,213, 1);
+        // box-shadow: inset -1px 6px 54px 9px rgba(54,161,213, 1);
         ion-row {
             margin-top: -7px;
         }
@@ -86,7 +96,7 @@
         background-color:  #e7cb3f;
     }
     ion-list{
-        margin-top: 5%;
+        margin-top: 15%;
     }
     button {
         ion-icon {
@@ -95,7 +105,7 @@
     } 
 }
 ion-item {
-    background-color: transparent;
+        background-color: rgba(54,161,213, 0.1);
     color: #fff;
     h2 {
         text-align: right;
@@ -122,8 +132,9 @@ ion-alert.alert-top {
     color:#040404;
     button {
         color: #040404 !important; // button text color
-        background-color: color($colors, secondary, base) !important;
+        // background-color: color($colors, secondary, base) !important;
         //button bg color
+        border:1px solid black;
     }
 
     .alert-message {

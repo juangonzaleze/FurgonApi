@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 
 import { LoginPageModule } from '../pages/login/login.module';
 import { RegistrochildPageModule } from '../pages/registrochild/registrochild.module';
+import { RegistropadrePageModule } from '../pages/registropadre/registropadre.module';
 import { HomePageModule } from '../pages/home/home.module';
 import { RutasPageModule } from '../pages/rutas/rutas.module';
 import { GestorlistPageModule } from '../pages/gestorlist/gestorlist.module';
@@ -17,6 +18,8 @@ import { PerfilPageModule } from '../pages/perfil/perfil.module';
 import { ChildprofilePageModule } from '../pages/childprofile/childprofile.module';
 import { RegisterfurgonPageModule } from '../pages/registerfurgon/registerfurgon.module';
 import { FormularioninoPageModule } from '../pages/formularionino/formularionino.module';
+import { FormulariopadrePageModule } from '../pages/formulariopadre/formulariopadre.module';
+import { PerfilpadrePageModule } from '../pages/perfilpadre/perfilpadre.module';
 
 
 @NgModule({
@@ -30,13 +33,16 @@ import { FormularioninoPageModule } from '../pages/formularionino/formularionino
     LoginPageModule,
     HomePageModule,
     RegistrochildPageModule,
+    RegistropadrePageModule,
     PerfilPageModule,
     GestorlistPageModule,
     ListrecorridoPageModule,
     RutasPageModule,
     ChildprofilePageModule,
     RegisterfurgonPageModule,
-    FormularioninoPageModule
+    FormularioninoPageModule,
+    FormulariopadrePageModule,
+    PerfilpadrePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

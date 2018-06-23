@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "name": "Lista de Recorrido",
+            "children": [
+                {
+                    "name": "Maria Jimenez",
+                    "address": "Dirección de Busqueda",
+                    "school": "Dirección de Llegada"
+                },
+                {
+                    "name": "Pedro Acosta",
+                    "address": "Dirección de Busqueda",
+                    "school": "Dirección de Llegada"
+
+                },
+                {
+                    "name": "Javier Rodriguez",
+                    "address": "Dirección de Busqueda",
+                    "school": "Dirección de Llegada"
+
+                },
+                {
+                    "name": "Juan Fernandez",
+                    "address": "Dirección de Busqueda",
+                    "school": "Dirección de Llegada"
+
+                }
+            ]
+        }
+    ]
+}

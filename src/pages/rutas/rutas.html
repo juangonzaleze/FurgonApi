@@ -6,344 +6,92 @@
 -->
 
 
-
+<ion-header no-border>
+	<ion-navbar>
+		<ion-title text-center>Mis Rutas</ion-title>
+	</ion-navbar>
+</ion-header>
 <ion-content class="bg-theme">
-	<ion-header no-border>
-		<ion-navbar>
-			<ion-title text-center>Mis Rutas</ion-title>
-		</ion-navbar>
-	</ion-header>
-	<div #map id="map"></div>
+<!-- 	<ion-avatar item-start class="avatar-img">
+		<img class="img-profile-map" src="assets/imgs/kiid.png">
+	</ion-avatar> -->
+	<ion-fab top left>
+		<button ion-fab mini color="ligth">  <ion-icon name="arrow-forward"></ion-icon>
+		</button>
+	</ion-fab>
+	<div class="container">
+		<img class="pantalla-1" src="assets/imgs/kii2.png">
+	</div>
+	<ion-input class="input-distance" type="number" placeholder="KM"></ion-input>
+	<div #map id="map">
+	</div>
 	<div class="container">
 		<ion-segment [(ngModel)]="section">
 			<ion-segment-button class="next-button" value="two" no-padding><img class="img-next" src="assets/imgs/play.png"></ion-segment-button>
 		</ion-segment>
 		<div [ngSwitch]="section">
 			<ion-list *ngSwitchCase="'one'">
-				<ion-scroll style="height:220px;" scrollY="true">
-					<ion-list class="listwo">
-						<div style="height: 110px;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;">
-							<ion-row>
-								<ion-col col-3>
-									<ion-avatar item-start>
-										<img style="margin-top: 15%;" src="assets/imgs/chofer.png">
-									</ion-avatar>
-								</ion-col>
-								<ion-col col-9>
-									<h4>Pedro Jimenez</h4>
-								</ion-col>
-								<ion-row class="row-select">
-									<ion-col col-2 style="align-self: center">
-										<img src="assets/imgs/furgon2.png">
-									</ion-col>
-									<ion-col col-10>
-										<ion-select  placeholder="Seleccionar" [(ngModel)]="Vehiculo">
-											<ion-option value="Opción 1">00CD0E</ion-option>
-											<ion-option value="Opción 2">00CD0E</ion-option>
-											<ion-option value="Opción 3">00CD0E</ion-option>
-											<ion-option value="Opción 4">00CD0E</ion-option>
-											<ion-option value="Opción 5">00CD0E</ion-option>
-											<ion-option value="Opción 6">00CD0E</ion-option>
-										</ion-select>
-									</ion-col>
-								</ion-row>
-							</ion-row>
-						</div>
-						<div style="height: 150px;;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;background-color:white;">
-							<ion-row>
-								<ion-col col-3>
-									<ion-avatar item-start>
-										<img class="img-profile" src="assets/imgs/kiid.png">
-									</ion-avatar>
-								</ion-col>
-								<ion-col col-9>
-									<h3>Juan Gonzalez</h3>
-								</ion-col>
-							</ion-row>
-							<ion-row class="row-line">
-								<ion-col col-2 text-center>
-									<img class="icon-profile" src="assets/imgs/home.png">
-								</ion-col>
-								<ion-col col-10 class="col-align" no-padding>
-									<p class="calle-datos">Calle # Esquina #</p>
-								</ion-col>
-								<ion-col col-2 text-center>
-									<img class="icon-profile" src="assets/imgs/school.png">
-								</ion-col>
-								<ion-col col-10 class="col-align" no-padding>
-									<p class="calle-datos">San Jose</p>
-								</ion-col>
-								<!-- <ion-col col-2 text-center>
-									<img class="icon-profile" src="assets/imgs/estado.png">
-								</ion-col> -->
-							<!-- 	<ion-col col-10 class="col-align" no-padding>
-									<p class="calle-datos">Estado:</p>
-								</ion-col> -->
-							</ion-row>
-							<!-- <div radio-group style="width:100%;position:relative;top:-60px;">
-								<ion-row>
-									<ion-col col-6>
-										<ion-item text-center>
-											<ion-label>Ya en el Auto</ion-label>
-											<ion-radio checked="true" value="go"></ion-radio>
-										</ion-item>
-									</ion-col>
-									<ion-col col-6>
-										<ion-item class="no-search">
-											<ion-label>No Buscar</ion-label>
-											<ion-radio value="rust"></ion-radio>
-										</ion-item>
-									</ion-col>
-								</ion-row>
-							</div> -->
-						</div>
-						<div style="height: 150px;;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;background-color:white;">
-							<ion-row>
-								<ion-col col-3>
-									<ion-avatar item-start>
-										<img class="img-profile" src="assets/imgs/kiid.png">
-									</ion-avatar>
-								</ion-col>
-								<ion-col col-9>
-									<h3>Juan Gonzalez</h3>
-								</ion-col>
-							</ion-row>
-							<ion-row class="row-line">
-								<ion-col col-2 text-center>
-									<img class="icon-profile" src="assets/imgs/home.png">
-								</ion-col>
-								<ion-col col-10 class="col-align" no-padding>
-									<p class="calle-datos">Calle # Esquina #</p>
-								</ion-col>
-								<ion-col col-2 text-center>
-									<img class="icon-profile" src="assets/imgs/school.png">
-								</ion-col>
-								<ion-col col-10 class="col-align" no-padding>
-									<p class="calle-datos">San Jose</p>
-								</ion-col>
-								<!-- <ion-col col-2 text-center>
-									<img class="icon-profile" src="assets/imgs/estado.png">
-								</ion-col> -->
-								<!-- <ion-col col-10 class="col-align" no-padding>
-									<p class="calle-datos">Estado:</p>
-								</ion-col> -->
-							</ion-row>
-					<!-- 		<div radio-group style="width:100%;position:relative;top:-60px;">
-								<ion-row>
-									<ion-col col-6>
-										<ion-item text-center>
-											<ion-label>Ya en el Auto</ion-label>
-											<ion-radio checked="true" value="go"></ion-radio>
-										</ion-item>
-									</ion-col>
-									<ion-col col-6>
-										<ion-item class="no-search">
-											<ion-label>No Buscar</ion-label>
-											<ion-radio value="rust"></ion-radio>
-										</ion-item>
-									</ion-col>
-								</ion-row>
-							</div> -->
-						</div>
-					</ion-list>
-				</ion-scroll>
+				<div class="card-chofer">
+					<ion-row>
+						<ion-col col-3>
+							<ion-avatar item-start>
+								<img class="img-chofer-profile" src="assets/imgs/chofer.png">
+							</ion-avatar>
+						</ion-col>
+						<ion-col col-9>
+							<h4>Pedro Jimenez</h4>
+						</ion-col>
+						<ion-row class="row-select">
+							<ion-col col-2 style="align-self: center">
+								<img src="assets/imgs/furgon2.png">
+							</ion-col>
+							<ion-col col-10>
+								<ion-select  placeholder="Seleccionar" [(ngModel)]="Vehiculo">
+									<ion-option value="Opción 1">00CD0E</ion-option>
+									<ion-option value="Opción 2">00CD0E</ion-option>
+									<ion-option value="Opción 3">00CD0E</ion-option>
+									<ion-option value="Opción 4">00CD0E</ion-option>
+									<ion-option value="Opción 5">00CD0E</ion-option>
+									<ion-option value="Opción 6">00CD0E</ion-option>
+								</ion-select>
+							</ion-col>
+						</ion-row>
+					</ion-row>
+				</div>
 			</ion-list>
-			<ion-scroll style="height:220px;" scrollY="true">
-				<ion-list *ngSwitchCase="'two'" class="list-recorrido">
-					<div style="height: 220px;;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;background-color:white;">
-						<ion-row>
-							<ion-col col-3>
-								<ion-avatar item-start>
-									<img class="img-profile" src="assets/imgs/kiid.png">
-								</ion-avatar>
-							</ion-col>
-							<ion-col col-9>
-								<h3>Juan Gonzalez</h3>
-							</ion-col>
-						</ion-row>
-						<ion-row class="row-line">
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/home.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Calle # Esquina #</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/school.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">San Jose</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/estado.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Estado:</p>
-							</ion-col>
-						</ion-row>
-						<div radio-group style="width:100%;position:relative;top:-60px;">
-							<ion-row>
-								<ion-col col-6>
-									<ion-item text-center>
-										<ion-label>Ya en el Auto</ion-label>
-										<ion-radio checked="true" value="go"></ion-radio>
-									</ion-item>
-								</ion-col>
-								<ion-col col-6>
-									<ion-item class="no-search">
-										<ion-label>No Buscar</ion-label>
-										<ion-radio value="rust"></ion-radio>
-									</ion-item>
-								</ion-col>
-							</ion-row>
-						</div>
-					</div>
-					<div style="height: 220px;;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;background-color:white;">
-						<ion-row>
-							<ion-col col-3>
-								<ion-avatar item-start>
-									<img class="img-profile" src="assets/imgs/kiid.png">
-								</ion-avatar>
-							</ion-col>
-							<ion-col col-9>
-								<h3>Juan Gonzalez</h3>
-							</ion-col>
-						</ion-row>
-						<ion-row class="row-line">
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/home.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Calle # Esquina #</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/school.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">San Jose</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/estado.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Estado:</p>
-							</ion-col>
-						</ion-row>
-						<div radio-group style="width:100%;position:relative;top:-60px;">
-							<ion-row>
-								<ion-col col-6>
-									<ion-item text-center>
-										<ion-label>Ya en el Auto</ion-label>
-										<ion-radio checked="true" value="go"></ion-radio>
-									</ion-item>
-								</ion-col>
-								<ion-col col-6>
-									<ion-item class="no-search">
-										<ion-label>No Buscar</ion-label>
-										<ion-radio value="rust"></ion-radio>
-									</ion-item>
-								</ion-col>
-							</ion-row>
-						</div>
-					</div>
-					<div style="height: 220px;;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;background-color:white;">
-						<ion-row>
-							<ion-col col-3>
-								<ion-avatar item-start>
-									<img class="img-profile" src="assets/imgs/kiid.png">
-								</ion-avatar>
-							</ion-col>
-							<ion-col col-9>
-								<h3>Juan Gonzalez</h3>
-							</ion-col>
-						</ion-row>
-						<ion-row class="row-line">
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/home.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Calle # Esquina #</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/school.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">San Jose</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/estado.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Estado:</p>
-							</ion-col>
-						</ion-row>
-						<div radio-group style="width:100%;position:relative;top:-60px;">
-							<ion-row>
-								<ion-col col-6>
-									<ion-item text-center>
-										<ion-label>Ya en el Auto</ion-label>
-										<ion-radio checked="true" value="go"></ion-radio>
-									</ion-item>
-								</ion-col>
-								<ion-col col-6>
-									<ion-item class="no-search">
-										<ion-label>No Buscar</ion-label>
-										<ion-radio value="rust"></ion-radio>
-									</ion-item>
-								</ion-col>
-							</ion-row>
-						</div>
-					</div>
-					<div style="height: 220px;;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;background-color:white;">
-						<ion-row>
-							<ion-col col-3>
-								<ion-avatar item-start>
-									<img class="img-profile" src="assets/imgs/kiid.png">
-								</ion-avatar>
-							</ion-col>
-							<ion-col col-9>
-								<h3>Juan Gonzalez</h3>
-							</ion-col>
-						</ion-row>
-						<ion-row class="row-line">
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/home.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Calle # Esquina #</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/school.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">San Jose</p>
-							</ion-col>
-							<ion-col col-2 text-center>
-								<img class="icon-profile" src="assets/imgs/estado.png">
-							</ion-col>
-							<ion-col col-10 class="col-align" no-padding>
-								<p class="calle-datos">Estado:</p>
-							</ion-col>
-						</ion-row>
-						<div radio-group style="width:100%;position:relative;top:-60px;">
-							<ion-row>
-								<ion-col col-6>
-									<ion-item text-center>
-										<ion-label>Ya en el Auto</ion-label>
-										<ion-radio checked="true" value="go"></ion-radio>
-									</ion-item>
-								</ion-col>
-								<ion-col col-6>
-									<ion-item class="no-search">
-										<ion-label>No Buscar</ion-label>
-										<ion-radio value="rust"></ion-radio>
-									</ion-item>
-								</ion-col>
-							</ion-row>
-						</div>
-					</div>
+			<ion-list *ngSwitchCase="'two'" class="list-recorrido">
+				<ion-list class="accordion-list">
+					<!-- First Level -->
+					<ion-list-header *ngFor="let item of recorridolist; let i = index" no-lines no-padding>
+						<!-- Toggle Button -->
+						<button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+							<!-- <ion-icon item-left name="clipboard"></ion-icon> -->
+							<ion-icon item-right ios="ios-list" md="ios-list" *ngIf="!item.open"></ion-icon>
+							<ion-icon item-right ios="ios-list" md="ios-list" *ngIf="item.open"></ion-icon>
+							<h3 text-center class="title-accr">{{ item.name }}</h3>
+							<ion-icon item-left ios="ios-arrow-up" md="ios-arrow-up" *ngIf="!item.open"></ion-icon>
+							<ion-icon item-left ios="ios-arrow-down" md="ios-arrow-down" *ngIf="item.open"></ion-icon>
+						</button>
+
+						<ion-list *ngIf="item.children && item.open" no-lines>
+							<!-- Second Level -->
+							<ion-list-header class="header-accordion" (tap)="MoveToList()" *ngFor="let child of item.children; let j = index" no-padding >
+								<!-- Direct Add Button as Fallback -->
+								<ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+									<ion-avatar item-start>
+										<img src="assets/imgs/kiid.png" style="width:60px;height: 60px;">
+									</ion-avatar>
+									<h2 style="margin-top: 5px;">{{ child.name }}</h2>
+									<p><span><ion-icon ios="ios-home" md="ios-home" item-start ></ion-icon>
+									</span>{{ child.address }}</p>
+									<p><span><ion-icon ios="ios-school" md="md-school" item-start ></ion-icon>
+									</span>{{ child.school }}</p>
+								</ion-item>
+							</ion-list-header>
+						</ion-list>
+					</ion-list-header>
 				</ion-list>
-			</ion-scroll>
+			</ion-list>
 		</div>
 	</div>
 </ion-content>

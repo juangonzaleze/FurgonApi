@@ -7,19 +7,19 @@
 <ion-content class="bg-theme">
 	<div class="bg-color">
 		<div class="contenido-login">
-			<img src="assets/imgs/logoapp.png" style="margin-top: 5%;">
+			<img src="assets/imgs/logoapp.png" class="logo-img">
 			<div class="login-box">
-				<ion-item style="color: #fff;background-color:transparent;padding-right: 16px;padding-bottom:10px;">
-					<ion-label floating style="color:white;"><ion-icon item-left name="person"></ion-icon>Usuario</ion-label>
-					<ion-input type="text" style="padding-left: 8px;background-color: rgba(0, 0, 0, 0.6);"></ion-input>
+				<ion-item class="item-login">
+					<ion-label floating class="label-login"><ion-icon item-left name="person"></ion-icon>Usuario</ion-label>
+					<ion-input type="text" class="input-login"></ion-input>
 				</ion-item>
 
-				<ion-item style="color: #fff;background-color:transparent;padding-right: 16px;padding-bottom:10px;">
-					<ion-label floating style="color:white;"><ion-icon item-left name="unlock"></ion-icon>Contraseña</ion-label>
-					<ion-input type="password" style="padding-left: 8px;background-color: rgba(0, 0, 0, 0.6)"></ion-input>
+				<ion-item class="item-login">
+					<ion-label floating class="label-login"><ion-icon item-left name="unlock"></ion-icon>Contraseña</ion-label>
+					<ion-input type="password" class="input-login"></ion-input>
 				</ion-item>
-				<div text-center style="margin-top:15px;">
-					<button ion-button color="login" style="width:75%;color:black;" (tap)="MoveToHome()">Ingresar</button>
+				<div text-center class="div-btn-login">
+					<button ion-button color="login" class="btn-login" (tap)="MoveToHome()">Ingresar</button>
 				</div>
 			</div>
 		</div>

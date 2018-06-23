@@ -19,6 +19,7 @@ import { ChildprofilePageModule } from '../pages/childprofile/childprofile.modul
 import { RegisterfurgonPageModule } from '../pages/registerfurgon/registerfurgon.module';
 import { FormularioninoPageModule } from '../pages/formularionino/formularionino.module';
 import { FormulariopadrePageModule } from '../pages/formulariopadre/formulariopadre.module';
+import { SelectcarmodalPageModule } from '../pages/selectcarmodal/selectcarmodal.module';
 import { PerfilpadrePageModule } from '../pages/perfilpadre/perfilpadre.module';
 
 
@@ -28,6 +29,14 @@ import { PerfilpadrePageModule } from '../pages/perfilpadre/perfilpadre.module';
   ],
   imports: [
     BrowserModule,
+    //   IonicModule.forRoot(MyApp, {
+    //   backButtonText: 'Go Back',
+    //   iconMode: 'ios',
+    //   modalEnter: 'modal-slide-in',
+    //   modalLeave: 'modal-slide-out',
+    //   tabsPlacement: 'bottom',
+    //   pageTransition: 'ios-transition'
+    // }),
     HttpModule,
     IonicModule.forRoot(MyApp, { menuType: "overlay"} ),
     LoginPageModule,
@@ -42,6 +51,7 @@ import { PerfilpadrePageModule } from '../pages/perfilpadre/perfilpadre.module';
     RegisterfurgonPageModule,
     FormularioninoPageModule,
     FormulariopadrePageModule,
+    SelectcarmodalPageModule,
     PerfilpadrePageModule
   ],
   bootstrap: [IonicApp],

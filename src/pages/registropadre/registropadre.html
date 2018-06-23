@@ -13,21 +13,21 @@
   <ion-fab bottom right>
     <button ion-fab class="fab-button" color="yellow" (tap)="MoveToPage()"><img src="assets/imgs/addpadre.png"></button>
   </ion-fab>
-  <ion-row style="margin-top:2.5rem" padding>
+  <ion-row class="row-pad" padding>
     <ion-col col-2>
       <ion-avatar>
-        <img style="width: 30px; height: 30px;" src="assets/imgs/regis2.png">
+        <img class="img-regis" src="assets/imgs/regis2.png">
       </ion-avatar>
     </ion-col>
     <ion-col col-10 style="align-self: center;">
-      <h2 style="margin-top: 0.5rem;font-size:2rem">Padres Registrados</h2>
+      <h2 class="title-pad">Padres Registrados</h2>
     </ion-col>
   </ion-row>
   <ion-list>
 <!--     <ion-list-header no-lines style="background-color:transparent">
       <h2 text-center class="title-list">Niños Registrados&nbsp;<ion-icon name="ios-people"></ion-icon></h2>
     </ion-list-header> -->
-    <ion-item (tap)="MoveToPerfil()" style="border-bottom: 1px solid #dedede;">
+    <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
       </ion-avatar>
@@ -41,7 +41,7 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <ion-item (tap)="MoveToPerfil()" style="border-bottom: 1px solid #dedede;">
+    <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
       </ion-avatar>
@@ -55,7 +55,7 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <ion-item (tap)="MoveToPerfil()" style="border-bottom: 1px solid #dedede;">
+    <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
       </ion-avatar>
@@ -69,7 +69,7 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <ion-item (tap)="MoveToPerfil()" style="border-bottom: 1px solid #dedede;">
+    <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
       </ion-avatar>
@@ -83,7 +83,7 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <ion-item (tap)="MoveToPerfil()" style="border-bottom: 1px solid #dedede;">
+    <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
       </ion-avatar>
@@ -97,7 +97,7 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <ion-item (tap)="MoveToPerfil()" style="border-bottom: 1px solid #dedede;">
+    <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
       </ion-avatar>
@@ -111,7 +111,7 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <ion-item (tap)="MoveToPerfil()" style="border-bottom: 1px solid #dedede;">
+    <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
       </ion-avatar>
@@ -125,72 +125,6 @@
         </ion-col>
       </ion-row>
     </ion-item>
-   <!--  <ion-item style="background-color:transparent;border-left:5px solid rgb(37,119,159);margin-bottom:5px;border-bottom:5px solid rgba(54,161,213, 0.7);" no-lines *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)">
-      <ion-row>
-        <ion-col col-3>
-          <ion-avatar item-start>
-            <img src="assets/imgs/userperfil.png" [ngClass]="{imgactive: isGroupShown(i)}">
-          </ion-avatar>
-        </ion-col>
-        <ion-col col-7 style="align-self: center;">
-          <h3 class="title-acc" [ngClass]="{active: isGroupShown(i)}">
-            {{d.title}}
-          </h3>
-        </ion-col>
-        <ion-col col-2 style="align-self: center;">
-          <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'ios-arrow-dropdown-outline' : 'ios-arrow-dropright-outline'"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <div *ngIf="isGroupShown(i)">
-        <ion-row>
-         <ion-col col-12>
-           <ion-item>
-            <ion-avatar item-start>
-              <img class="icon-profile" src="assets/imgs/phone.png">
-            </ion-avatar>
-            <p>Teléfono</p>
-            <h2>{{d.telefono}}</h2>
-          </ion-item>
-        </ion-col>
-        <ion-col col-12>
-         <ion-item>
-          <ion-avatar item-start>
-            <img class="icon-profile" src="assets/imgs/school.png">
-          </ion-avatar>
-          <p>Colegio</p>
-          <h2>{{d.establecimiento}}</h2>
-        </ion-item>
-      </ion-col>
-      <ion-col col-12>
-        <ion-item>
-          <ion-avatar item-start>
-            <img class="icon-profile" src="assets/imgs/pins.png">
-          </ion-avatar>
-          <p>Lugar de Retiro</p>
-          <h2>{{d.retiro}}</h2>
-        </ion-item>
-      </ion-col>
-      <ion-col col-12>
-       <ion-item>
-        <ion-avatar item-start>
-          <img class="icon-profile" src="assets/imgs/pins.png">
-        </ion-avatar>
-        <p>Lugar de Llegada</p>
-        <h2>{{d.llegada}}</h2>
-      </ion-item>
-    </ion-col>
-    <ion-col col-12>
-      <ion-item>
-            <ion-avatar item-start>
-              <img class="icon-profile" src="assets/imgs/observacion.png">
-            </ion-avatar>
-            <p>Observaciones</p>
-            <h2>{{d.observaciones}}</h2>
-          </ion-item>
-    </ion-col>
-  </ion-row>
-</div>
-</ion-item> -->
 </ion-list>
 
 </ion-content>

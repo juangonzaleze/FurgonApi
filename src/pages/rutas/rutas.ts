@@ -1,6 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController,ModalController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map'
+
+import { SelectcarmodalPage } from '../selectcarmodal/selectcarmodal';
 
 declare var google;
 
@@ -22,7 +26,11 @@ export class RutasPage {
   fullscreenControl: boolean
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController,public geolocation: Geolocation) {
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController, public navParams: NavParams,public menuCtrl: MenuController,public geolocation: Geolocation,private http: Http) {
+    let localData = http.get('assets/recorridolist.json').map(res => res.json().items);
+    localData.subscribe(data => {
+      this.recorridolist = data;
+    })
   }
 
 
@@ -32,9 +40,22 @@ export class RutasPage {
     console.log('ionViewDidLoad RutasPage');
     this.loadMap();
     this.menuCtrl.close();
-
   }
-  
+  // ionViewWillEnter(){
+  //   let selectModal = this.modalCtrl.create(SelectcarmodalPage);
+  //   selectModal.present();
+  // }
+  presentSelectCarModal() {
+    let selectModal = this.modalCtrl.create(SelectcarmodalPage);
+    selectModal.present();
+  }
+   toggleSection(i) {
+    this.recorridolist[i].open = !this.recorridolist[i].open;
+  }
+ 
+  toggleItem(i, j) {
+    this.recorridolist[i].children[j].open = !this.recorridolist[i].children[j].open;
+  }
   loadMap(){
 
     this.geolocation.getCurrentPosition().then((position) => {

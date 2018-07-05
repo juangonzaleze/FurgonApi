@@ -11,7 +11,7 @@
     <ion-icon name="md-person-add"></ion-icon>Registrar Niño
   </button> -->
   <ion-fab bottom right>
-    <button ion-fab class="fab-button" color="yellow" (tap)="MoveToPage()"><img src="assets/imgs/addpadre.png"></button>
+    <button ion-fab class="fab-button" color="yellow" (tap)="newPadre()"><img src="assets/imgs/addpadre.png"></button>
   </ion-fab>
   <ion-row class="row-pad" padding>
     <ion-col col-2>
@@ -23,13 +23,38 @@
       <h2 class="title-pad">Padres Registrados</h2>
     </ion-col>
   </ion-row>
-  <ion-list>
-    <ion-item-sliding>
+  <ion-list *ngFor="let p of parents">
+<!--     <ion-list-header no-lines style="background-color:transparent">
+      <h2 text-center class="title-list">Niños Registrados&nbsp;<ion-icon name="ios-people"></ion-icon></h2>
+    </ion-list-header> -->
+    <ion-item-sliding #item>
+      <ion-item  class="item-style">
+        <ion-avatar item-start>
+          <img class="img-profile" src="assets/imgs/padreuser.png">
+        </ion-avatar>
+        <h2>{{ p._profile.full_name }}</h2>
+        <ion-row>
+          <ion-col col-2>
+            <img class="icon-profile" src="assets/imgs/dnii.png">
+          </ion-col>
+          <ion-col col-10 style="align-self: center" no-padding>
+            <p>{{ p._profile.phone }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <!-- <button ion-button (tap)="MoveToPerfil()">Abrir</button> -->
+        <button ion-button color="secondary" (tap)="EditPadre(p.id)">Editar</button>
+        <button ion-button color="danger" (tap)="deleteParent(p.id)">Borrar</button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- <ion-item-sliding #item>
       <ion-item (tap)="MoveToPerfil()" class="item-style">
         <ion-avatar item-start>
           <img class="img-profile" src="assets/imgs/padreuser.png">
         </ion-avatar>
-        <h2>Juan Gonzalez</h2>
+        <h2>Luis Perez</h2>
         <ion-row>
           <ion-col col-2>
             <img class="icon-profile" src="assets/imgs/dnii.png">
@@ -39,112 +64,123 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item-options side="right" class="items-options">
-        <ion-row text-center>
-          <ion-col col-2>
-          </ion-col>
-          <ion-col col-4 no-padding>
-            <button ion-button color="primary" (tap)="MoveToProfilePadre()">
-              <ion-icon name="create"></ion-icon>
-              Editar
-            </button>
-          </ion-col>
-          <ion-col col-4 no-padding>
-            <button ion-button color="danger">
-              <ion-icon name="trash"></ion-icon>
-              Borrar
-            </button>
-          </ion-col>
-          <ion-col col-2>
-          </ion-col>
-        </ion-row>
+      <ion-item-options side="right">
+        <button ion-button>Abrir</button>
+        <button ion-button color="secondary">Editar</button>
+        <button ion-button color="danger">Borrar</button>
       </ion-item-options>
     </ion-item-sliding>
 
-    <ion-item (tap)="MoveToPerfil()" class="item-style">
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/padreuser.png">
-      </ion-avatar>
-      <h2>Luis Perez</h2>
-      <ion-row>
-        <ion-col col-2>
-          <img class="icon-profile" src="assets/imgs/dnii.png">
-        </ion-col>
-        <ion-col col-10 style="align-self: center" no-padding>
-          <p>12345678</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item (tap)="MoveToPerfil()" class="item-style">
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/padreuser.png">
-      </ion-avatar>
-      <h2>Maria Fajardo</h2>
-      <ion-row>
-        <ion-col col-2>
-          <img class="icon-profile" src="assets/imgs/dnii.png">
-        </ion-col>
-        <ion-col col-10 style="align-self: center" no-padding>
-          <p>12345678</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item (tap)="MoveToPerfil()" class="item-style">
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/padreuser.png">
-      </ion-avatar>
-      <h2>Jennifer Perez</h2>
-      <ion-row>
-        <ion-col col-2>
-          <img class="icon-profile" src="assets/imgs/dnii.png">
-        </ion-col>
-        <ion-col col-10 style="align-self: center" no-padding>
-          <p>12345678</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item (tap)="MoveToPerfil()" class="item-style">
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/padreuser.png">
-      </ion-avatar>
-      <h2>Carlos Urbina</h2>
-      <ion-row>
-        <ion-col col-2>
-          <img class="icon-profile" src="assets/imgs/dnii.png">
-        </ion-col>
-        <ion-col col-10 style="align-self: center" no-padding>
-          <p>12345678</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item (tap)="MoveToPerfil()" class="item-style">
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/padreuser.png">
-      </ion-avatar>
-      <h2>Jesús Rodriguez</h2>
-      <ion-row>
-        <ion-col col-2>
-          <img class="icon-profile" src="assets/imgs/dnii.png">
-        </ion-col>
-        <ion-col col-10 style="align-self: center" no-padding>
-          <p>12345678</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item (tap)="MoveToPerfil()" class="item-style">
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/padreuser.png">
-      </ion-avatar>
-      <h2>Jordan Pacheco</h2>
-      <ion-row>
-        <ion-col col-2>
-          <img class="icon-profile" src="assets/imgs/dnii.png">
-        </ion-col>
-        <ion-col col-10 style="align-self: center" no-padding>
-          <p>12345678</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-  </ion-list>
+    <ion-item-sliding #item>
+      <ion-item (tap)="MoveToPerfil()" class="item-style">
+        <ion-avatar item-start>
+          <img class="img-profile" src="assets/imgs/padreuser.png">
+        </ion-avatar>
+        <h2>Maria Fajardo</h2>
+        <ion-row>
+          <ion-col col-2>
+            <img class="icon-profile" src="assets/imgs/dnii.png">
+          </ion-col>
+          <ion-col col-10 style="align-self: center" no-padding>
+            <p>12345678</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button>Abrir</button>
+        <button ion-button color="secondary">Editar</button>
+        <button ion-button color="danger">Borrar</button>
+      </ion-item-options>
+    </ion-item-sliding> -->
+
+    <!-- <ion-item-sliding #item>
+      <ion-item (tap)="MoveToPerfil()" class="item-style">
+        <ion-avatar item-start>
+          <img class="img-profile" src="assets/imgs/padreuser.png">
+        </ion-avatar>
+        <h2>Jennifer Perez</h2>
+        <ion-row>
+          <ion-col col-2>
+            <img class="icon-profile" src="assets/imgs/dnii.png">
+          </ion-col>
+          <ion-col col-10 style="align-self: center" no-padding>
+            <p>12345678</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button>Abrir</button>
+        <button ion-button color="secondary">Editar</button>
+        <button ion-button color="danger">Borrar</button>
+      </ion-item-options>
+    </ion-item-sliding> -->
+
+    <!-- <ion-item-sliding #item>
+      <ion-item (tap)="MoveToPerfil()" class="item-style">
+        <ion-avatar item-start>
+          <img class="img-profile" src="assets/imgs/padreuser.png">
+        </ion-avatar>
+        <h2>Carlos Urbina</h2>
+        <ion-row>
+          <ion-col col-2>
+            <img class="icon-profile" src="assets/imgs/dnii.png">
+          </ion-col>
+          <ion-col col-10 style="align-self: center" no-padding>
+            <p>12345678</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button>Abrir</button>
+        <button ion-button color="secondary">Editar</button>
+        <button ion-button color="danger">Borrar</button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding #item>
+      <ion-item (tap)="MoveToPerfil()" class="item-style">
+        <ion-avatar item-start>
+          <img class="img-profile" src="assets/imgs/padreuser.png">
+        </ion-avatar>
+        <h2>Jesús Rodriguez</h2>
+        <ion-row>
+          <ion-col col-2>
+            <img class="icon-profile" src="assets/imgs/dnii.png">
+          </ion-col>
+          <ion-col col-10 style="align-self: center" no-padding>
+            <p>12345678</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button>Abrir</button>
+        <button ion-button color="secondary">Editar</button>
+        <button ion-button color="danger">Borrar</button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding #item>
+      <ion-item (tap)="MoveToPerfil()" class="item-style">
+        <ion-avatar item-start>
+          <img class="img-profile" src="assets/imgs/padreuser.png">
+        </ion-avatar>
+        <h2>Jordan Pacheco</h2>
+        <ion-row>
+          <ion-col col-2>
+            <img class="icon-profile" src="assets/imgs/dnii.png">
+          </ion-col>
+          <ion-col col-10 style="align-self: center" no-padding>
+            <p>12345678</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button>Abrir</button>
+        <button ion-button color="secondary">Editar</button>
+        <button ion-button color="danger">Borrar</button>
+      </ion-item-options>
+    </ion-item-sliding> -->
+
+</ion-list>
 
 </ion-content>

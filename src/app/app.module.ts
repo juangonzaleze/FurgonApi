@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { Camera } from '@ionic-native/camera';
+import { FileTransfer } from '@ionic-native/file-transfer';
 
 import { LoginPageModule } from '../pages/login/login.module';
 import { RegistrochildPageModule } from '../pages/registrochild/registrochild.module';
@@ -42,6 +45,7 @@ import { EditfurgonPageModule } from '../pages/editfurgon/editfurgon.module';
     // }),
     HttpModule,
     IonicModule.forRoot(MyApp, { menuType: "overlay"} ),
+    IonicStorageModule.forRoot(),
     LoginPageModule,
     HomePageModule,
     RegistrochildPageModule,
@@ -67,6 +71,8 @@ import { EditfurgonPageModule } from '../pages/editfurgon/editfurgon.module';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
+    FileTransfer,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

@@ -10,16 +10,16 @@
 			<img src="assets/imgs/logoapp.png" class="logo-img">
 			<div class="login-box">
 				<ion-item class="item-login">
-					<ion-label floating class="label-login"><ion-icon item-left name="person"></ion-icon>Usuario</ion-label>
-					<ion-input type="text" class="input-login"></ion-input>
+					<ion-label floating class="label-login"><ion-icon item-left name="person"></ion-icon>Email</ion-label>
+					<ion-input [(ngModel)]="Email" (keyup.enter)="keytab($event)" type="text" class="input-login"></ion-input>
 				</ion-item>
 
 				<ion-item class="item-login">
 					<ion-label floating class="label-login"><ion-icon item-left name="unlock"></ion-icon>Contraseña</ion-label>
-					<ion-input type="password" class="input-login"></ion-input>
+					<ion-input [(ngModel)]="Password" (keyup.enter)="login()" type="password" class="input-login"></ion-input>
 				</ion-item>
 				<div text-center class="div-btn-login">
-					<button ion-button color="login" class="btn-login" (tap)="MoveToHome()">Ingresar</button>
+					<button ion-button color="login" class="btn-login" (tap)="login()">Ingresar</button>
 				</div>
 			</div>
 		</div>

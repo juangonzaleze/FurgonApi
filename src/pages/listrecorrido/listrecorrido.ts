@@ -22,6 +22,8 @@ import { reorderArray } from 'ionic-angular';
  	items = [];
  	btnName: any = 'edit';
  	flag: any = false;
+  testCheckboxOpen;
+  testCheckboxResult;
 
  	constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
  	}

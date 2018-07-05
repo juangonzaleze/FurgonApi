@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Storage } from "@ionic/storage";
 
 import { HomePage } from '../pages/home/home';
 import { RegistrochildPage } from '../pages/registrochild/registrochild';
@@ -10,7 +10,6 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { RutasPage } from '../pages/rutas/rutas';
 import { GestorlistPage } from '../pages/gestorlist/gestorlist';
 import { LoginPage } from '../pages/login/login';
-
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +21,12 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(platform: Platform, statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    platform: Platform,
+    statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public storage: Storage
+  ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -46,6 +50,11 @@ export class MyApp {
         this.splashScreen.hide();
       }, 100);
     }
+  }
+
+  logout() {
+    this.storage.remove('token');
+    this.nav.setRoot(LoginPage);
   }
 
 }

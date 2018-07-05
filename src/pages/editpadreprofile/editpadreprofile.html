@@ -99,19 +99,19 @@
 				<p class="title-car">Niños Registrados</p>
 			</ion-col>
 		</ion-row>
-		<ion-row class="row-style">
-			<ion-item-sliding>
+		<ion-row class="row-style" *ngFor="let c of children" >
+			<ion-item-sliding *ngIf="c.user_id == id">
 				<ion-item>
 					<ion-avatar item-start>
 						<img class="img-kid" src="assets/imgs/kiid.png">
 					</ion-avatar>
-					<h2 class="title-kid">Luis Rodriguez</h2>
+					<h2 class="title-kid">{{ c.full_name }}</h2>
 					<ion-row>
 						<ion-col col-2>
 							<img class="icon-profile" src="assets/imgs/school.png">
 						</ion-col>
 						<ion-col col-10 style="align-self: center" no-padding>
-							<p>San Jose</p>
+							<p>{{ c.scholl_id }}</p>
 						</ion-col>
 					</ion-row>
 				</ion-item>
@@ -120,13 +120,13 @@
 						<ion-col col-2>
 						</ion-col>
 						<ion-col col-4 no-padding>
-							<button ion-button color="primary" (tap)="MoveToProfileChild()">
+							<button ion-button color="primary" (tap)="MoveToProfileChild(c.id)">
 								<ion-icon name="create"></ion-icon>
 								Editar
 							</button>
 						</ion-col>
 						<ion-col col-4 no-padding>
-							<button ion-button color="danger">
+							<button ion-button color="danger" (tap)="deleteChild(c.id)">
 								<ion-icon name="trash"></ion-icon>
 								Borrar
 							</button>
@@ -137,7 +137,7 @@
 				</ion-item-options>
 			</ion-item-sliding>
 		</ion-row>
-		<ion-row class="row-style">
+		<!-- <ion-row class="row-style">
 			<ion-item-sliding>
 				<ion-item>
 					<ion-avatar item-start>
@@ -174,7 +174,10 @@
 					</ion-row>
 				</ion-item-options>
 			</ion-item-sliding>
-		</ion-row>
+		</ion-row> -->
+		<ion-fab bottom right>
+		    <button ion-fab class="fab-button" color="yellow" (tap)="newChild()"><img src="assets/imgs/addpadre.png"></button>
+		</ion-fab>
 	</ion-list>
 	<ion-row class="row-buttons">
 		<div class="buttons" *ngIf="editing">

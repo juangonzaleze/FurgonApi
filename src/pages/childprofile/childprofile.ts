@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http, Headers, Response } from "@angular/http";
+import { Storage } from "@ionic/storage";
 
 /**
  * Generated class for the ChildprofilePage page.
@@ -15,27 +17,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChildprofilePage {
 	hideMe=false;
-   @Input() NombreUsuario: string = "Luis Rodriguez";
+   @Input() NombreUsuario: string;
    newNombreUsuario: string;
-   @Input() TlfUsuario: string = "0000-000-0000";
+   @Input() TlfUsuario: string;
    newTlfUsuario: string;
-   @Input() Direccion: string = "Calle # Esquina #";
+   @Input() Direccion: string;
    newDireccion: string;
-   @Input() Colegio: string = "San Jose";
+   @Input() Colegio: string;
    newColegio: string;
-   @Input() Horario: string = "6:00am - 12:00pm";
+   @Input() Horario: string;
    newHorario: string;
-   @Input() Observaciones: string = "Descripción";
+   @Input() Observaciones: string;
    newObservaciones: string;
    @Output() valueChange = new EventEmitter<string>();
    editing: boolean;
 
+     token;
+     id;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+     api = 'https://furgonapp.cl/public/api/';
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public http: Http, 
+    public storage: Storage,
+    ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChildprofilePage');
+    this.token = this.navParams.get('token');
+    this.id = this.navParams.get('id');
+    this.getChildData()
   }
 
    ngOnChanges(): void {
@@ -84,6 +98,8 @@ export class ChildprofilePage {
      this.Observaciones = this.newObservaciones;
      this.valueChange.emit(this.newObservaciones);
      this.editing = false;
+
+     this.saveData();
    }
 
    cancel(): void {
@@ -107,5 +123,52 @@ export class ChildprofilePage {
      this.newObservaciones = this.Observaciones;
      this.editing = false;
    }
+
+   getChildData() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    this.http.get(this.api + 'children/' + this.id, { headers: headers })
+      .map(res => res.json())
+      .subscribe(
+        data => {
+          console.log(data);
+          this.NombreUsuario = data.child.full_name;
+          this.newNombreUsuario = data.child.full_name;
+          this.TlfUsuario = data.child.phone;
+          this.newTlfUsuario = data.child.phone;
+          this.Colegio = data.child.school_id;
+          this.newColegio = data.child.school_id;
+          this.Observaciones = data.child.observations;
+          this.newObservaciones = data.child.observations;
+
+        },
+        error => {
+
+        }
+      );
+ }
+
+ saveData(){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    var data = JSON.stringify({ full_name: this.newNombreUsuario, phone: this.newTlfUsuario, school_id: this.newColegio, observation: this.newObservaciones });
+
+    this.http.put(this.api + 'children/' + this.id, data, { headers: headers })
+    .map((res: Response) => res.json())
+    .subscribe(
+      data => { 
+        this.navCtrl.pop();
+      },
+      error => {
+
+      }
+    );
+  }
 
 }

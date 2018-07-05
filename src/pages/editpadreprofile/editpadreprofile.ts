@@ -1,7 +1,11 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController  } from 'ionic-angular';
+import { Http, Headers, Response } from "@angular/http";
+import { Storage } from "@ionic/storage";
 
 import { ChildprofilePage } from '../childprofile/childprofile';
+import { RegistropadrePage } from '../registropadre/registropadre';
+import { FormularioninoPage } from '../formularionino/formularionino';
 
 @IonicPage()
 @Component({
@@ -10,22 +14,36 @@ import { ChildprofilePage } from '../childprofile/childprofile';
 })
 export class EditpadreprofilePage {
 	hideMe=false;
-	@Input() NombreUsuario: string = "Juan Gonzales";
+	@Input() NombreUsuario: string;
 	newNombreUsuario: string;
-	@Input() TlfUsuario: string = "0000-000-0000";
+	@Input() TlfUsuario: string;
 	newTlfUsuario: string;
-	@Input() DniUsuario: string = "0123456";
+	@Input() DniUsuario: string;
 	newDniUsuario: string;
-	@Input() Email: string = "Padre@Gmail.com";
+	@Input() Email: string;
 	newEmail: string;
 	@Output() valueChange = new EventEmitter<string>();
 	editing: boolean;
+     token;
+     id;
+     children;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams) {
-	}
+     api = 'https://furgonapp.cl/public/api/';
+
+	constructor(
+          public navCtrl: NavController,
+          public navParams: NavParams,
+          public http: Http, 
+          public storage: Storage,
+          public toastCtrl: ToastController
+    ) {}
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad EditpadreprofilePage');
+          this.token = this.navParams.get('token');
+          this.id = this.navParams.get('id');
+          this.getPadreData();
+          this.getChildrenList();
 	}
 
 	ngOnChanges(): void {
@@ -62,6 +80,8 @@ export class EditpadreprofilePage {
      this.Email = this.newEmail;
      this.valueChange.emit(this.newEmail);
      this.editing = false;
+
+     this.saveData();
  }
 
  cancel(): void {
@@ -80,9 +100,107 @@ export class EditpadreprofilePage {
      this.editing = false;
  }
 
- MoveToProfileChild(){
- 	this.navCtrl.push(ChildprofilePage);
+ MoveToProfileChild(id){
+ 	this.navCtrl.push(ChildprofilePage, {id: id, token: this.token});
  }
 
+ getPadreData() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    this.http.get(this.api + 'parents/' + this.id, { headers: headers })
+      .map(res => res.json())
+      .subscribe(
+        data => {
+          console.log(data);
+          this.NombreUsuario = data.parent._profile.full_name;
+          this.newNombreUsuario = data.parent._profile.full_name;
+          this.TlfUsuario = data.parent._profile.phone;
+          this.newTlfUsuario = data.parent._profile.phone;
+          this.DniUsuario = data.parent._profile.dni;
+          this.newDniUsuario = data.parent._profile.dni;
+          this.Email = data.parent.email;
+          this.newEmail = data.parent.email;
+
+        },
+        error => {
+
+        }
+      );
+ }
+
+ getChildrenList() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    this.http.get(this.api + 'children', { headers: headers })
+      .map(res => res.json())
+      .subscribe(
+        data => {
+          console.log(data);
+          this.children = data.children;
+        },
+        error => {
+
+        }
+      );
+  }
+
+ saveData(){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    var data = JSON.stringify({ full_name: this.newNombreUsuario, dni: this.newDniUsuario, phone: this.newTlfUsuario, email: this.newEmail });
+
+    this.http.put(this.api + 'parents/' + this.id, data, { headers: headers })
+    .map((res: Response) => res.json())
+    .subscribe(
+      data => { 
+        this.navCtrl.push(RegistropadrePage, { token: this.token });
+      },
+      error => {
+
+      }
+    );
+  }
+
+  newChild(){
+    this.navCtrl.push(FormularioninoPage, { padre: this.id, token: this.token });
+  }
+
+  deleteChild(id){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    this.http.delete(this.api + 'children/' + id, { headers: headers })
+      .map(res => res.json())
+      .subscribe(
+        data => {
+          this.toast('Se elimino con exito');
+          this.getChildrenList();
+        },
+        error => {
+
+        }
+      );
+  }
+
+  toast(message) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.present();
+  }
 
 }

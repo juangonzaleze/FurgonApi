@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http, Headers, Response } from "@angular/http";
+import { Storage } from "@ionic/storage";
 
+import { RegisterfurgonPage } from '../registerfurgon/registerfurgon';
 /**
  * Generated class for the EditfurgonPage page.
  *
@@ -24,11 +27,24 @@ export class EditfurgonPage {
 	@Output() valueChange = new EventEmitter<string>();
 	editing: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    token;
+     id;
+
+     api = 'https://furgonapp.cl/public/api/';
+
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      public http: Http, 
+      public storage: Storage
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditfurgonPage');
+    this.token = this.navParams.get('token');
+    this.id = this.navParams.get('id');
+    this.getFurgonData();
   }
 
   ngOnChanges(): void {
@@ -59,6 +75,8 @@ export class EditfurgonPage {
      this.Color = this.newColor;
      this.valueChange.emit(this.newColor);
      this.editing = false;
+
+     this.saveData();
  }
 
  cancel(): void {
@@ -73,5 +91,50 @@ export class EditfurgonPage {
      this.newColor = this.Color;
      this.editing = false;
  }
+
+ getFurgonData() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    this.http.get(this.api + 'furgon/' + this.id, { headers: headers })
+      .map(res => res.json())
+      .subscribe(
+        data => {
+          console.log(data);
+          this.Modelo = data.furgon.brand;
+          this.newModelo = data.furgon.brand;
+          this.Patente = data.furgon.patent;
+          this.newPatente = data.furgon.patent;
+          this.Color = data.furgon.color;
+          this.newColor = data.furgon.color;
+
+        },
+        error => {
+
+        }
+      );
+ }
+
+ saveData(){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
+    headers.append('Authorization', 'Bearer' + this.token);
+
+    var data = JSON.stringify({ brand: this.newModelo, patent: this.newPatente, color: this.newColor });
+
+    this.http.put(this.api + 'furgon/' + this.id, data, { headers: headers })
+    .map((res: Response) => res.json())
+    .subscribe(
+      data => { 
+        this.navCtrl.push(RegisterfurgonPage, { token: this.token });
+      },
+      error => {
+
+      }
+    );
+  }
 
 }

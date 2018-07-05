@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the RegisterfurgonPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FormulariofurgonPage } from '../formulariofurgon/formulariofurgon';
+import { EditfurgonPage } from '../editfurgon/editfurgon';
 
 @IonicPage()
 @Component({
@@ -20,6 +16,13 @@ export class RegisterfurgonPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterfurgonPage');
+  }
+
+  MoveToFormularioFurgon(){
+  	this.navCtrl.push(FormulariofurgonPage);
+  }
+  MoveToEditFurgon(){
+    this.navCtrl.push(EditfurgonPage);
   }
 
 }

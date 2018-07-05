@@ -15,7 +15,7 @@
 
 <ion-content class="bg-theme">
 	<ion-fab bottom right>
-		<button ion-fab class="fab-button" color="yellow"><img src="assets/imgs/addcar.png"></button>
+		<button ion-fab class="fab-button" color="yellow" (tap)="MoveToFormularioFurgon()"><img src="assets/imgs/addcar.png"></button>
 	</ion-fab>
 	<div class="contenido-Perfil">
 		<div class="container-infor">
@@ -86,7 +86,7 @@
 						<ion-col col-2>
 						</ion-col>
 						<ion-col col-4 no-padding>
-							<button ion-button color="primary">
+							<button ion-button color="primary" (tap)="MoveToEditFurgon()">
 								<ion-icon name="create"></ion-icon>
 								Editar
 							</button>

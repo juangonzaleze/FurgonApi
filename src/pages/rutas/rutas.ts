@@ -15,6 +15,7 @@ declare var google;
 })
 export class RutasPage {
   section: string = 'one';
+  recorridolist: any[];
   hideMe = false;
   @ViewChild('map') mapElement: ElementRef;
   map: any;

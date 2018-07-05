@@ -35,6 +35,10 @@ export class GestorlistPage {
           name: 'Titulo',
           placeholder: 'Nombre de la Lista'
         },
+         {
+          name: 'Direccion',
+          placeholder: 'Dirección de Inicio'
+        },
       ],
       buttons: [
         {

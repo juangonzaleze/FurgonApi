@@ -1,0 +1,72 @@
+<ion-header>
+	<ion-navbar>
+		<ion-row>
+			<ion-col col-10>
+				<ion-title text-center>Editar Furgón</ion-title>
+			</ion-col>
+			<ion-col col-2>
+				<button ion-button class="button-edit" *ngIf="!editing" (tap)="startEditing()" icon-only float-right>
+					<ion-icon name="create"></ion-icon>
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<div style="margin-top:5%">
+	<ion-row>
+		<ion-col col-3>
+			<img class="icon-profile" src="assets/imgs/furgon.png">
+		</ion-col>
+		<ion-col col-9 class="col-align" no-padding>
+			<p class="infor-quest">Modelo del Vehiculo</p>
+			<ion-label class="Infor-Person" *ngIf="!editing">{{Modelo}}</ion-label>
+			<ion-item *ngIf="editing" style="margin-bottom: 10px" no-lines no-padding>
+				<ion-input text-center [(ngModel)]="newModelo"></ion-input>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col col-3>
+			<img class="icon-profile" src="assets/imgs/dni3.png">
+		</ion-col>
+		<ion-col col-9 class="col-align" no-padding>
+			<p class="infor-quest">Patente/Matricula</p>
+			<ion-label class="Infor-Person" *ngIf="!editing">{{Patente}}</ion-label>
+			<ion-item *ngIf="editing" no-lines no-padding>
+				<ion-input text-center [(ngModel)]="newPatente"></ion-input>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col col-3>
+			<img class="icon-profile" src="assets/imgs/paint2.png">
+		</ion-col>
+		<ion-col col-9 class="col-align" no-padding>
+			<p class="infor-quest">Color del Vehiculo</p>
+			<ion-label class="Infor-Person" *ngIf="!editing">{{Color}}</ion-label>
+			<ion-item *ngIf="editing" no-lines no-padding>
+				<ion-input text-center [(ngModel)]="newColor"></ion-input>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+	<ion-row class="row-buttons">
+		<div class="buttons" *ngIf="editing">
+			<ion-col col-6>
+				<button ion-button color="danger" (click)="cancel()" icon-left>
+					<ion-icon name="close"></ion-icon>
+					Cancelar
+				</button>
+			</ion-col>
+			<ion-col col-6>
+				<button ion-button (click)="accept()" icon-left>
+					<ion-icon name="checkmark"></ion-icon>
+					Guardar Cambios
+				</button>
+			</ion-col>
+		</div>
+	</ion-row>
+</div>
+</ion-content>

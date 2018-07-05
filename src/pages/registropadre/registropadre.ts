@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { FormulariopadrePage } from '../formulariopadre/formulariopadre';
 import { PerfilpadrePage } from '../perfilpadre/perfilpadre';
+import { EditpadreprofilePage } from '../editpadreprofile/editpadreprofile';
 
 /**
  * Generated class for the RegistropadrePage page.
@@ -30,6 +31,9 @@ export class RegistropadrePage {
   }
   MoveToPerfil(){
     this.navCtrl.push(PerfilpadrePage);
+  }
+  MoveToProfilePadre(){
+    this.navCtrl.push(EditpadreprofilePage);
   }
 
 }

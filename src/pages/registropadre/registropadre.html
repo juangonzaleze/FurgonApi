@@ -24,23 +24,43 @@
     </ion-col>
   </ion-row>
   <ion-list>
-<!--     <ion-list-header no-lines style="background-color:transparent">
-      <h2 text-center class="title-list">Niños Registrados&nbsp;<ion-icon name="ios-people"></ion-icon></h2>
-    </ion-list-header> -->
-    <ion-item (tap)="MoveToPerfil()" class="item-style">
-      <ion-avatar item-start>
-        <img class="img-profile" src="assets/imgs/padreuser.png">
-      </ion-avatar>
-      <h2>Juan Gonzalez</h2>
-      <ion-row>
-        <ion-col col-2>
-          <img class="icon-profile" src="assets/imgs/dnii.png">
-        </ion-col>
-        <ion-col col-10 style="align-self: center" no-padding>
-          <p>12345678</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
+    <ion-item-sliding>
+      <ion-item (tap)="MoveToPerfil()" class="item-style">
+        <ion-avatar item-start>
+          <img class="img-profile" src="assets/imgs/padreuser.png">
+        </ion-avatar>
+        <h2>Juan Gonzalez</h2>
+        <ion-row>
+          <ion-col col-2>
+            <img class="icon-profile" src="assets/imgs/dnii.png">
+          </ion-col>
+          <ion-col col-10 style="align-self: center" no-padding>
+            <p>12345678</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right" class="items-options">
+        <ion-row text-center>
+          <ion-col col-2>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <button ion-button color="primary" (tap)="MoveToProfilePadre()">
+              <ion-icon name="create"></ion-icon>
+              Editar
+            </button>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <button ion-button color="danger">
+              <ion-icon name="trash"></ion-icon>
+              Borrar
+            </button>
+          </ion-col>
+          <ion-col col-2>
+          </ion-col>
+        </ion-row>
+      </ion-item-options>
+    </ion-item-sliding>
+
     <ion-item (tap)="MoveToPerfil()" class="item-style">
       <ion-avatar item-start>
         <img class="img-profile" src="assets/imgs/padreuser.png">
@@ -125,6 +145,6 @@
         </ion-col>
       </ion-row>
     </ion-item>
-</ion-list>
+  </ion-list>
 
 </ion-content>

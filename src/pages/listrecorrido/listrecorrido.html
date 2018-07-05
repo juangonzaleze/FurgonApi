@@ -11,7 +11,7 @@
 
 <ion-content class="bg-theme"> 
   <ion-fab bottom right>
-    <button ion-fab mini color="yellow"><ion-icon name="md-person-add"></ion-icon></button>
+    <button ion-fab mini color="yellow"><ion-icon name="md-person-add" (tap)="Agregar()"></ion-icon></button>
   </ion-fab>
   <ion-list-header class="header-c">
    Datos Chofer
@@ -72,11 +72,25 @@
             </ion-col>
           </ion-row>
         </ion-item>
-        <ion-item-options side="right">
-          <button ion-button color="primary">
-            <ion-icon name="trash"></ion-icon>
-            Quitar
-          </button>
+        <ion-item-options side="right" class="items-options">
+          <ion-row text-center>
+            <ion-col col-2>
+            </ion-col>
+            <ion-col col-4 no-padding>
+              <button ion-button color="primary" (tap)="AgregarEscuela()">
+                <ion-icon name="school"></ion-icon>
+                Agregar
+              </button>
+            </ion-col>
+            <ion-col col-4 no-padding>
+              <button ion-button color="danger">
+                <ion-icon name="trash"></ion-icon>
+                Quitar
+              </button>
+            </ion-col>
+            <ion-col col-2>
+            </ion-col>
+          </ion-row>
         </ion-item-options>
       </ion-item-sliding>
       <ion-item-sliding>

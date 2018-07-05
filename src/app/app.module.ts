@@ -21,6 +21,9 @@ import { FormularioninoPageModule } from '../pages/formularionino/formularionino
 import { FormulariopadrePageModule } from '../pages/formulariopadre/formulariopadre.module';
 import { SelectcarmodalPageModule } from '../pages/selectcarmodal/selectcarmodal.module';
 import { PerfilpadrePageModule } from '../pages/perfilpadre/perfilpadre.module';
+import { EditpadreprofilePageModule } from '../pages/editpadreprofile/editpadreprofile.module';
+import { FormulariofurgonPageModule } from '../pages/formulariofurgon/formulariofurgon.module';
+import { EditfurgonPageModule } from '../pages/editfurgon/editfurgon.module';
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import { PerfilpadrePageModule } from '../pages/perfilpadre/perfilpadre.module';
     FormularioninoPageModule,
     FormulariopadrePageModule,
     SelectcarmodalPageModule,
-    PerfilpadrePageModule
+    PerfilpadrePageModule,
+    EditpadreprofilePageModule,
+    FormulariofurgonPageModule,
+    EditfurgonPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

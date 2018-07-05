@@ -13,6 +13,16 @@ page-registropadre {
 	p{
 		color: #040404;
 	}
+	.items-options{
+		width:100%;
+		ion-row{
+			width:100%;
+			button{
+				width:90%;
+			}
+
+		}
+	}
 	.list-md .item-block .item-inner {
 		border-bottom: 0px;
 	}

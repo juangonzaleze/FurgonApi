@@ -33,6 +33,16 @@ h1,h2,h3,h4,h5{
 		left: 24%;
 		top: -60px;
 	}
+	.items-options{
+		width:100%;
+		ion-row{
+			width:100%;
+			button{
+				width:90%;
+			}
+
+		}
+	}
 	.col-align{
 		align-self:center;
 	}
